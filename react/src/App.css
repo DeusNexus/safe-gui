@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #111;
+  color: white;
+  height: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  color: rgb(8, 199, 8);
+}
+
+ul {
+  list-style: none;
+  opacity: 100;
+  transition: ease-in-out 1s;
+}
+
+li {
+  text-decoration: none;
+}
+
+ul.navigation-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  padding: 15px;
+}
+
+ul.navigation-menu li {
+  padding: 10px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+ul.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: ease-in-out 1s;
+}
+
+ul.navigation-menu li a {
+  color: white;
+  padding: 1px;
+}
+
+span.navigation-title {
+  margin-left: 10px;
+  font-size: 24px;
+  background-color: grey;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+span.navigation-title span{
+  color: lightblue;
+}
+
+div.container {
+  padding: 15px;
+  height: 100%;
+  background-color: lightgray;
+}
+
+nav button {
+  width: 50px;
+  margin-right: 15px;
+  color: black;
+}
+
+nav button:hover {
+  width: 50px;
+  margin-right: 15px;
+  color: grey;
+}
+
+div.textBg {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  height: 100%;
+}
+
+div.main {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: lightgray;
+}
+
+div.main-left {
+  flex-basis: 60%;
+  height: 100%;
+}
+
+div.main-right {
+  width: 40%;
+  height: 100%;
+  padding: 10px 10px;
+  color: darkred;
+  background-color: lightgray;
+}
+
+div.consoleBg {
+  background-color: rgb(252, 252, 230);
+  color: black;
+  padding: 7px;
+  border-radius: 5px;
+  height: 800px;
+  overflow-x:scroll;
+  overflow-y:hidden;
+}
+
+textarea {
+  overflow-y: scroll;
+  resize: none;
+  width: 100%;
+  height: 95%;
+  border-radius: 5px;
+  border-color: none;
+}
+
+textarea::placeholder {
+  color: blue;
+  font-size: 1.2em;
+  font-style: inherit;
+}
+
+div.button-container {
+  display: flex;
+}
+
+div.console-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  transition: ease-in-out 0.1s;
+  border: none;
+  color: white;
+  padding: 2px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3px;
+  margin: 2px 0px;
+}
+
+button:hover {
+  background-color: black;
+  transition: ease-in-out 0.1s;
+  color: white;
+}
+
+input {
+  margin-right: 5px;
+}

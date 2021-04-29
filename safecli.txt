@@ -1,0 +1,89 @@
+safe auth [--endpoint, --output, --xorurl]
+    safe auth allow [--endpoint, --output, --xorurl] <req-id> 
+safe auth apps [--endpoint, --output, --xorurl]
+safe auth bin-version [--authd-path, --endpoint, --output, --xorurl]
+safe auth clear [--endpoint, --output, --xorurl]
+safe auth create {--test-coins} [--config, --endpoint, --output, --sk, --xorurl]
+    safe auth deny [--endpoint, --output, --xorurl] <req-id>
+safe auth help
+safe auth install [--auth-path, --endpoint, --output, --xorurl]
+safe auth lock [--endpoint, --output, --xorurl]
+safe auth reqs [--endpoint, --output, --xorurl]
+safe auth restart [--auth-path, --endpoint, --output, --xorurl]
+    safe auth revoke [--endpoint, --output, --xorurl] <app-id>
+safe auth start [--auth-path, --endpoint, --output, --xorurl]
+safe auth status [--endpoint, --output, --xorurl]
+safe auth stop [--auth-path, --endpoint, --output, --xorurl]
+    safe auth subscribe [--endpoint, --output, --xorurl] <notifs-endpoint>
+safe auth unlock {--self-auth} [--config, --endpoint, --output, --xorurl]
+    safe auth unsubscribe [--endpoint, --output, --xorurl] <notifs-endpoint>
+safe auth update [--auth-path, --endpoint, --output, --xorurl]
+
+    safe cat [--endpoint, --output, --xorurl] <location>
+
+safe config [--endpoint, --output, --xorurl]
+safe config add [--endpoint, --output, --xorurl]
+    safe config add network [--endpoint, --output, --xorurl] <network-name> <config-location>
+safe config clear [--endpoint, --output, --xorurl]
+safe config help
+safe config remove [--endpoint, --output, --xorurl]
+    safe config remove network [--endpoint, --output, --xorurl] <network-name>
+
+    safe dog [--endpoint, --output, --xorurl] <location>
+
+    safe files add [--endpoint, --output, --xorurl] <location> <target>
+    safe files get [--endpoint, --exists, --output, --progress, --xorurl] <source> <dest>
+safe files help
+    safe files ls [--endpoint, --output, --xorurl] <target>
+    safe files put [--endpoint, --output, --xorurl] <location> <dest>
+    safe files rm [--endpoint, --output, --xorurl] <target>
+    safe files sync [--endpoint, --output, --xorurl] <location> <target>
+    safe files tree [--endpoint, --output, --xorurl] <target>
+
+safe help
+
+safe keys balance [--endpoint, --keyurl, --output, --sk, --xorurl]
+safe keys create {--test-coins} [--endpoint, --output, --pay-with, --preload, --xorurl]
+safe keys help
+    safe keys show [--endpoint, --output, --xorurl] <keyurl>
+    safe keys transfer [--endpoint, --from, --output, --to, --xorurl] <amount>
+
+safe networks [--endpoint, --output, --xorurl]
+    safe networks add [--endpoint, --output, --xorurl] <network-name> <config-location>
+safe networks check [--endpoint, --output, --xorurl]
+safe networks help
+    safe networks remove [--endpoint, --output, --xorurl] <network-name>
+    safe networks set [--endpoint, --output, --xorurl] <network-name> <addresses>...
+    safe networks switch [--endpoint, --output, --xorurl] <network-name>
+
+*safe node bin-version [--endpoint, --node_path, --output, --xorurl]
+safe node help
+safe node install [--endpoint, --node-path, --output, --xorurl]
+    safe node join [--endpoint, --hcc, --node-path, --output, --xorurl] <network-name>
+safe node killall [--endpoint, --node-path, --output, --xorurl]
+safe node run-baby-fleming {--testing, -y} [--endpoint, --interval, --ip, --node-path, --nodes, --output, --xorurl]
+safe node update [--endpoint, --node-path, --output, --xorurl]
+
+    safe nrs add [--endpoint, --link, --output, --xorurl] <name>
+    safe nrs create [--endpoint, --link, --output, --xorurl] <name>
+safe nrs help
+    safe nrs remove [--endpoint, --output, --xorurl] <name>
+
+    safe seq append [--endpoint, --output, --xorurl] <data> <target>
+safe seq help
+    safe seq store [--endpoint, --output, --type, --xorname, --xorurl] <data>
+
+    safe setup completions [--endpoint, --output, --xorurl] <shell>
+safe setup help
+
+safe update [--endpoint, --output, --xorurl]
+
+safe wallet balance [--endpoint, --output, --xorurl]
+safe wallet create {--test-coins} [--endpoint, --keyurl, --name, --output, --pay-with, --preload, --sk, --xorurl]
+safe wallet help
+    safe wallet insert [--endpoint, --keyurl, --name, --output, --pay-with, --sk, --xorurl] <target>
+    safe wallet transfer [--endpoint, --from, --output, --to, --xorurl] <amount>
+
+    safe xorul [--endpoint, --output, --xorurl] <location>
+    safe xorurl decode [--endpoint, --output, --xorurl] <xorurl>
+safe xorurl help
