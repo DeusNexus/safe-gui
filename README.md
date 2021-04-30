@@ -30,4 +30,4 @@ Run both files
 
 `cd safe-gui/api && npm start` 
 
-Browse to localhost:3000 where the website runs (API runs on port 3001)
+Browse to localhost:3001 where the website runs (API runs on port 3000)
