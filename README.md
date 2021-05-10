@@ -2,10 +2,7 @@
 
 Graphical User Interface (GUI) for SafeNetwork CLI
 
-#DEPENDENCIES
-
--Only for linux (Ubuntu)
-
+#DEPENDENCIES - Only for linux (Ubuntu)
 -npm
 
 #INSTALL
