@@ -6,12 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "api-react": "concurrently 'npm start' 'cd ./../react && npm start'",
+    "all-install": "npm install && cd ./../react && npm install"
   },
   "keywords": [],
   "author": "DeusNexus",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^6.1.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.7"
   }

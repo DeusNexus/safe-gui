@@ -113,7 +113,7 @@ const Configure = ({ setConsole, consoled }) => {
                     <li>
                         <b>CONFIG ADD NETWORK</b><br/>
                         <input type='text' name='config-add-network-networkname' placeholder='Network Name'></input>
-                        <input type='text' name='config-add-network-configlocation' placeholder='Config Location'></input>
+                        <input type='file' name='config-add-network-configlocation' placeholder='Config Location'></input>
                         <button onClick={() => configAddNetwork(setConsole, consoled)}>ADD NETWORK</button>
                     </li>
                     <br/>
@@ -156,7 +156,7 @@ const Configure = ({ setConsole, consoled }) => {
                     <li>
                         <b>NETWORKS ADD</b><br/>
                         <input type='text' name='networks-add-networkname' placeholder='Network Name'></input>
-                        <input type='text' name='networks-add-configlocation' placeholder='Config Location'></input>
+                        <input type='file' name='networks-add-configlocation' placeholder='Config Location'></input>
                         <button onClick={() => networksAdd(setConsole, consoled)}>ADD</button>
                     </li>
                     <br/>

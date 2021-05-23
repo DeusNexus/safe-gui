@@ -184,7 +184,7 @@ app.post('/api/auth/update', async (req, res) => {
 app.post('/api/cat/:location', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
-    const location = req.params.location
+    const location = decodeURIComponent(req.params.location)
     body = await handleCMD(`safe cat ${location} ${flags} ${options}`,req)
     return res.json(body)
 })
@@ -248,9 +248,10 @@ app.post('/api/config/remove/network/:networkName', async (req, res) => {
  * DOG
  * **/
 app.post('/api/dog/:location', async (req, res) => {
+    console.log(req.params)
     const flags = req.body.flags
     const options = req.body.options
-    const location = req.params.location
+    const location = decodeURIComponent(req.params.location)
     body = await handleCMD(`safe dog ${location} ${flags} ${options}`,req)
     return res.json(body)
 })
@@ -359,10 +360,17 @@ app.post('/api/keys/help', async (req, res) => {
     return res.json(body)
 })
 
+app.post('/api/keys/show', async (req, res) => {
+    const flags = req.body.flags
+    const options = req.body.options
+    body = await handleCMD(`safe keys show ${flags} ${options}`,req)
+    return res.json(body)
+})
+
 app.post('/api/keys/show/:keyUrl', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
-    const keyUrl = req.params.keyUrl
+    const keyUrl = decodeURIComponent(req.params.keyUrl)
     body = await handleCMD(`safe keys show ${keyUrl} ${flags} ${options}`,req)
     return res.json(body)
 })
@@ -467,6 +475,7 @@ app.post('/api/node/install', async (req, res) => {
 })
 
 app.post('/api/node/join/:networkName', async (req, res) => {
+    console.log(req.params)
     const flags = req.body.flags
     const options = req.body.options
     const networkName = req.params.networkName
@@ -615,7 +624,7 @@ app.post('/api/wallet/insert/:target', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
     const target = req.params.target
-    body = await handleCMD(`safe wallet insert ${target} ${flags} ${options}`,req)
+    body = await handleCMD(`safe wallet insert ${target}${flags}${options}`,req)
     return res.json(body)
 })
 

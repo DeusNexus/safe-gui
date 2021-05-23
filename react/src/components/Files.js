@@ -104,7 +104,7 @@ const Files = ({setConsole, consoled}) => {
            <ul>
                 <li>
                    <b>FILES ADD</b><br/>
-                   <input type='text' name='files-add-location' placeholder='PATH to File or Folder'></input>
+                   <input type='file' name='files-add-location' placeholder='PATH to File or Folder'></input>
                    <input type='text' name='files-add-target' placeholder='Target PATH (optional)'></input>
                    <button onClick={() => filesAdd(setConsole, consoled)}>ADD</button>
                </li>
@@ -112,7 +112,7 @@ const Files = ({setConsole, consoled}) => {
                <li>
                    <b>FILES GET</b><br/>
                    <input type='text' name='files-get-source' placeholder='Source'></input>
-                   <input type='text' name='files-get-dest' placeholder='Dest'></input>
+                   <input type='file' name='files-get-dest' placeholder='Dest'></input>
                    <button onClick={() => filesGet(setConsole, consoled)}>GET</button>
                </li>
                <br/>
@@ -129,7 +129,7 @@ const Files = ({setConsole, consoled}) => {
                <br/>
                <li>
                    <b>FILES PUT</b><br/>
-                   <input type='text' name='files-put-location' placeholder='PATH to File or Folder'></input>
+                   <input type='file' name='files-put-location' placeholder='PATH to File or Folder'></input>
                    <input type='text' name='files-put-dest' placeholder='Target PATH (optional)'></input>
                    <button onClick={() => filesPut(setConsole, consoled)}>PUT</button>
                </li>
@@ -141,7 +141,7 @@ const Files = ({setConsole, consoled}) => {
                <br/>
                <li>
                    <b>FILES SYNC</b><br/>
-                   <input type='text' name='files-sync-location' placeholder='Location'></input>
+                   <input type='file' name='files-sync-location' placeholder='Location'></input>
                    <input type='text' name='files-sync-target' placeholder='Target'></input>
                    <button onClick={() => filesSync(setConsole, consoled)}>SYNC</button>
                </li>
@@ -171,7 +171,7 @@ const Files = ({setConsole, consoled}) => {
                <br/>
                <li>
                    <b>SEQ APPEND</b><br/>
-                   <input type='text' name='seq-append-data' placeholder='Data'></input>
+                   <input type='file' name='seq-append-data' placeholder='Data'></input>
                    <input type='text' name='seq-append-target' placeholder='Target'></input>
                    <button onClick={() => seqAppend(setConsole, consoled)}>APPEND</button>
                </li>
@@ -183,7 +183,7 @@ const Files = ({setConsole, consoled}) => {
                <br/>
                <li>
                    <b>SEQ STORE</b><br/>
-                   <input type='text' name='seq-store-data' placeholder='Data'></input>
+                   <input type='file' name='seq-store-data' placeholder='Data'></input>
                    <button onClick={() => seqStore(setConsole, consoled)}>STORE</button>
                </li>
                <br/>

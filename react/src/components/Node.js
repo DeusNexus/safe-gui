@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { postReq } from '../Functions'
 
 const binVersion = (setConsole, consoled) => {
@@ -13,8 +13,8 @@ const install = (setConsole, consoled) => {
     postReq(setConsole, consoled,`/api/node/install`)
 }
 
-const join = (setConsole, consoled) => {
-    const networkName = ''
+const join = (setConsole, consoled, nodeJoinVal) => {
+    const networkName = nodeJoinVal
     postReq(setConsole, consoled,`/api/node/join/${networkName}`)
 }
 
@@ -33,6 +33,8 @@ const update = (setConsole, consoled) => {
 }
 
 const Node = ({setConsole, consoled}) => {
+    const [nodeJoinVal, setNodeJoinVal] = useState('')
+
     return (
         <div className='container'>
         <header>
@@ -57,8 +59,8 @@ const Node = ({setConsole, consoled}) => {
                <br/>
                <li>
                    <b>NODE JOIN</b><br/>
-                   <input type='text' name='join-network-name' placeholder='network-name'></input>
-                   <button onClick={() => join(setConsole, consoled)}>JOIN</button>
+                   <input type='text' name='join-network-name' placeholder='network-name' onChange={(e) => setNodeJoinVal(e.target.value)}></input>
+                   <button onClick={() => join(setConsole, consoled, nodeJoinVal)}>JOIN</button>
                </li>
                <br/>
                <li>
