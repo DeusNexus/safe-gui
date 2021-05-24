@@ -1,17 +1,17 @@
 import Axios from 'axios';
 
-export const updateConsole = (data,consoled,setConsole) => {
-    setConsole(new Date().toLocaleTimeString() + '\n' + data.console + data.error + '\n' + consoled)
+export const updateConsole = (data,STORE) => {
+    STORE.setConsole(new Date().toLocaleTimeString() + '\n' + data.console + data.error + '\n' + STORE.consoled)
 }
 
-export const postReq = (setConsole, consoled, url, flags, options) => {
+export const postReq = (STORE, url, flags, options) => {
     console.log(url)
-    setConsole(new Date().toLocaleTimeString()+ `\nRequested ${url} from API, resolving...\n\n` + consoled)
+    STORE.setConsole(new Date().toLocaleTimeString()+ `\nRequested ${url} from API, resolving...\n\n` + STORE.consoled)
     Axios.post(url, { 
         flags: flags ? flags : '', 
         options: options ? options : ''
     })
         .then(d => d.data)
-        .then(d => updateConsole(d, consoled, setConsole))
+        .then(d => updateConsole(d, STORE))
         .catch(e => alert(e))
 }

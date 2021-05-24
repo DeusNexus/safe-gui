@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import { Link, Route } from "react-router-dom";
 import { FaAlignRight } from 'react-icons/fa';
 import './App.css';
-import Auth from './components/Auth';
-import Configure from './components/Configure';
-import Main from './components/Main';
-import Node from './components/Node';
-import Files from './components/Files';
-import View from './components/View';
-import KeyWallet from './components/KeyWallet'
+import { Auth, Configure, Files, KeyWallet, Main, Node, View } from './components'
 
 export default function App() {
 
@@ -22,6 +16,10 @@ export default function App() {
       console.log('Menu visible')
       setStyle('')
     }
+  }
+
+  const STORE = {
+    consoled, setConsole
   }
 
   return (
@@ -65,22 +63,22 @@ export default function App() {
               <Main/>
             </Route>
             <Route path="/configure">
-              <Configure setConsole={setConsole} consoled={consoled}/>
+              <Configure STORE={STORE}/>
             </Route>
             <Route path="/auth">
-              <Auth setConsole={setConsole} consoled={consoled}/>
+              <Auth STORE={STORE}/>
             </Route>
             <Route path="/node">
-              <Node setConsole={setConsole} consoled={consoled}/>
+              <Node STORE={STORE}/>
             </Route>
             <Route path="/view">
-              <View setConsole={setConsole} consoled={consoled}/>
+              <View STORE={STORE}/>
             </Route>
             <Route path="/files">
-              <Files setConsole={setConsole} consoled={consoled}/>
+              <Files STORE={STORE}/>
             </Route>
             <Route path="/keys-wallet">
-              <KeyWallet setConsole={setConsole} consoled={consoled}/>
+              <KeyWallet STORE={STORE}/>
             </Route>
         </div>
         <div className='main-right'>

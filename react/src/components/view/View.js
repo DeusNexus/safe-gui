@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import { postReq } from '../Functions'
+import { postReq } from '../../Functions'
 
-const cat = (setConsole, consoled, catXOR) => {
+const cat = (STORE, catXOR) => {
     const location = encodeURIComponent(catXOR)
-    postReq(setConsole, consoled,`/api/cat/${location}`)
+    postReq(STORE,`/api/cat/${location}`)
 }
 
-const dog = (setConsole, consoled, dogXOR) => {
+const dog = (STORE, dogXOR) => {
     const location = encodeURIComponent(dogXOR)
-    postReq(setConsole, consoled,`/api/dog/${location}`)
+    postReq(STORE,`/api/dog/${location}`)
 }
 
-const download = (setConsole, consoled, downloadXOR) => {
+const download = (STORE, downloadXOR) => {
     const location = encodeURIComponent(downloadXOR)
-    postReq(setConsole, consoled,`/api/dog/${location}`)
-    postReq(setConsole, consoled,`/api/cat/${location}`)
+    postReq(STORE,`/api/dog/${location}`)
+    postReq(STORE,`/api/cat/${location}`)
 }
 
 
-const View = ({setConsole, consoled}) => {
+const View = ({STORE}) => {
     const [dogXOR, setDogXOR] = useState('')
     const [catXOR, setCatXOR] = useState('')
     const [downloadXOR, setDownloadXOR] = useState('')
@@ -37,7 +37,7 @@ const View = ({setConsole, consoled}) => {
                         placeholder='XOR-URL'
                         onChange={(e)=>setDogXOR(e.target.value)}
                     />
-                   <button onClick={() => dog(setConsole, consoled,dogXOR)}>DOG</button>
+                   <button onClick={() => dog(STORE,dogXOR)}>DOG</button>
                </li>
                <br/>
                <li>
@@ -48,7 +48,7 @@ const View = ({setConsole, consoled}) => {
                         placeholder='XOR-URL'
                         onChange={(e)=>setCatXOR(e.target.value)}
                    />
-                   <button onClick={() => cat(setConsole, consoled,catXOR)}>CAT</button>
+                   <button onClick={() => cat(STORE,catXOR)}>CAT</button>
                </li>
                <br/>
                <li>
@@ -58,7 +58,7 @@ const View = ({setConsole, consoled}) => {
                         placeholder='XOR-URL'
                         onChange={(e)=>setDownloadXOR(e.target.value)}
                     />
-                   <button onClick={() => download(setConsole, consoled,downloadXOR)}>Download</button>
+                   <button onClick={() => download(STORE,downloadXOR)}>Download</button>
                </li>
            </ul>
        </header>

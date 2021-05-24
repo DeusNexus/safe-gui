@@ -1,106 +1,106 @@
 import React from 'react';
-import { postReq } from '../Functions'
+import { postReq } from '../../Functions'
 
-// const auth = (setConsole, consoled) => {
-//     postReq(setConsole, consoled,'/api/auth')
+// const auth = (STORE) => {
+//     postReq(STORE,'/api/auth')
 // }
 
-const authAllow = (setConsole, consoled) => {
+const authAllow = (STORE) => {
     const reqId = 0
-    postReq(setConsole, consoled,`/api/auth/allow/${reqId}`)
+    postReq(STORE,`/api/auth/allow/${reqId}`)
 }
 
-const authApps = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/apps')
+const authApps = (STORE) => {
+    postReq(STORE,'/api/auth/apps')
 }
 
-const authBinVersion = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/bin-version')
+const authBinVersion = (STORE) => {
+    postReq(STORE,'/api/auth/bin-version')
 }
 
-const authClear = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/clear')
+const authClear = (STORE) => {
+    postReq(STORE,'/api/auth/clear')
 }
 
-const authCreate = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/create', '--test-coins', '--config default_credentials.json')
+const authCreate = (STORE) => {
+    postReq(STORE,'/api/auth/create', '--test-coins', '--config default_credentials.json')
 }
 
-const authDeny = (setConsole, consoled) => {
+const authDeny = (STORE) => {
     const reqId = 0
-    postReq(setConsole, consoled,`/api/auth/deny/${reqId}`)
+    postReq(STORE,`/api/auth/deny/${reqId}`)
 }
 
-const authHelp = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/help')
+const authHelp = (STORE) => {
+    postReq(STORE,'/api/auth/help')
 }
 
-const authInstall = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/install')
+const authInstall = (STORE) => {
+    postReq(STORE,'/api/auth/install')
 }
 
-const authLock = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/lock')
+const authLock = (STORE) => {
+    postReq(STORE,'/api/auth/lock')
 }
 
-const authReqs = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/reqs')
+const authReqs = (STORE) => {
+    postReq(STORE,'/api/auth/reqs')
 }
 
-const authRestart = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/restart')
+const authRestart = (STORE) => {
+    postReq(STORE,'/api/auth/restart')
 }
 
-const authRevoke = (setConsole, consoled) => {
+const authRevoke = (STORE) => {
     const appId = 0
-    postReq(setConsole, consoled,`/api/auth/revoke/${appId}`)
+    postReq(STORE,`/api/auth/revoke/${appId}`)
 }
 
-const authStart = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/start')
+const authStart = (STORE) => {
+    postReq(STORE,'/api/auth/start')
 }
 
-const authStatus = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/status')
+const authStatus = (STORE) => {
+    postReq(STORE,'/api/auth/status')
 }
 
-const authStop = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/stop')
+const authStop = (STORE) => {
+    postReq(STORE,'/api/auth/stop')
 }
 
-const authSubscribe = (setConsole, consoled) => {
+const authSubscribe = (STORE) => {
     const notifsEndpoint = ''
-    postReq(setConsole, consoled,`/api/auth/subscribe/${notifsEndpoint}`)
+    postReq(STORE,`/api/auth/subscribe/${notifsEndpoint}`)
 }
 
-const authUnlock = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/unlock')
+const authUnlock = (STORE) => {
+    postReq(STORE,'/api/auth/unlock')
 }
 
-const authUnsubscribe = (setConsole, consoled) => {
+const authUnsubscribe = (STORE) => {
     const notifsEndpoint = ''
-    postReq(setConsole, consoled,`/api/auth/unsubscribe/${notifsEndpoint}`)
+    postReq(STORE,`/api/auth/unsubscribe/${notifsEndpoint}`)
 }
 
-const authUpdate = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/update')
+const authUpdate = (STORE) => {
+    postReq(STORE,'/api/auth/update')
 }
 
 //Sequences
-const createAndLogin = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/restart')
-    postReq(setConsole, consoled,'/api/auth/create')
-    postReq(setConsole, consoled,'/api/auth/unlock')
-    postReq(setConsole, consoled,'/api/auth/status')
+const createAndLogin = (STORE) => {
+    postReq(STORE,'/api/auth/restart')
+    postReq(STORE,'/api/auth/create')
+    postReq(STORE,'/api/auth/unlock')
+    postReq(STORE,'/api/auth/status')
 }
 
-const reauth = (setConsole, consoled) => {
-    postReq(setConsole, consoled,'/api/auth/restart')
-    postReq(setConsole, consoled,'/api/auth/unlock')
-    postReq(setConsole, consoled,'/api/auth/status')
+const reauth = (STORE) => {
+    postReq(STORE,'/api/auth/restart')
+    postReq(STORE,'/api/auth/unlock')
+    postReq(STORE,'/api/auth/status')
 }
 
-const Auth = ({ setConsole, consoled }) => {
+const Auth = ({ STORE }) => {
     return (
         <div className='container'>
              <header>
@@ -112,108 +112,108 @@ const Auth = ({ setConsole, consoled }) => {
                         {/* <br/>
                         <li>
                             <p>AUTH:</p>
-                            <button onClick={() => auth(setConsole, consoled)}>AUTH</button>
+                            <button onClick={() => auth(STORE)}>AUTH</button>
                         </li> */}
                         <h3 style={{color: 'red'}}>Generic Commands</h3>
                         <li>
                             <p><b>AUTH ALLOW</b> - Send request to a remote Authenticator daemon to allow an authorisation request</p>
                             <input type='text' name='allow-req-id' placeholder='req-id'></input>
-                            <button onClick={() => authAllow(setConsole, consoled)}>ALLOW</button>
+                            <button onClick={() => authAllow(STORE)}>ALLOW</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH APPS</b> - Send request to a remote Authenticator daemon to retrieve the list of the authorised applications</p>
-                            <button onClick={() => authApps(setConsole, consoled)}>APPS</button>
+                            <button onClick={() => authApps(STORE)}>APPS</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH BIN-VERSION</b> - Shows the version of the Authenticator binary</p>
-                            <button onClick={() => authBinVersion(setConsole, consoled)}>BIN-VERSION</button>
+                            <button onClick={() => authBinVersion(STORE)}>BIN-VERSION</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH CLEAR</b> - Clear Safe CLI authorisation credentials from local file</p>
-                            <button onClick={() => authClear(setConsole, consoled)}>CLEAR</button>
+                            <button onClick={() => authClear(STORE)}>CLEAR</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH CREATE</b> - Send request to a remote Authenticator daemon to create a new Safe</p>
-                            <button onClick={() => authCreate(setConsole, consoled)}>CREATE</button>
+                            <button onClick={() => authCreate(STORE)}>CREATE</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH DENY</b> - Send request to a remote Authenticator daemon to deny an authorisation request</p>
                             <input type='text' name='deny-req-id' placeholder='req-id'></input>
-                            <button onClick={() => authDeny(setConsole, consoled)}>DENY</button>
+                            <button onClick={() => authDeny(STORE)}>DENY</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH HELP</b> - Authorise the SAFE CLI and interact with a remote Authenticator daemon</p>
-                            <button onClick={() => authHelp(setConsole, consoled)}>HELP</button>
+                            <button onClick={() => authHelp(STORE)}>HELP</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH INSTALL</b> - Install latest sn_authd released version in the system</p>
-                            <button onClick={() => authInstall(setConsole, consoled)}>INSTALL</button>
+                            <button onClick={() => authInstall(STORE)}>INSTALL</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH LOCK</b> - Send request to a remote Authenticator daemon to lock any currently unlocked Safe</p>
-                            <button onClick={() => authLock(setConsole, consoled)}>LOCK</button>
+                            <button onClick={() => authLock(STORE)}>LOCK</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH REQS</b> - Send request to a remote Authenticator daemon to retrieve the list of the pending authorisation requests</p>
-                            <button onClick={() => authReqs(setConsole, consoled)}>REQS</button>
+                            <button onClick={() => authReqs(STORE)}>REQS</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH RESTART</b> - Restarts the Authenticator daemon if it's running already</p>
-                            <button onClick={() => authRestart(setConsole, consoled)}>RESTART</button>
+                            <button onClick={() => authRestart(STORE)}>RESTART</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH REVOKE</b> - Send request to a remote Authenticator daemon to revoke permissions from a previously authorised application</p>
                             <input type='text' name='revoke-app-id' placeholder='app-id'></input>
-                            <button onClick={() => authRevoke(setConsole, consoled)}>REVOKE</button>
+                            <button onClick={() => authRevoke(STORE)}>REVOKE</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH START</b> - Starts the Authenticator daemon if it's not running already</p>
-                            <button onClick={() => authStart(setConsole, consoled)}>START</button>
+                            <button onClick={() => authStart(STORE)}>START</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH STATUS</b> - Send request to a remote Authenticator daemon to obtain a status report</p>
-                            <button onClick={() => authStatus(setConsole, consoled)}>STATUS</button>
+                            <button onClick={() => authStatus(STORE)}>STATUS</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH STOP</b> - Stops the Authenticator daemon if it's running</p>
-                            <button onClick={() => authStop(setConsole, consoled)}>STOP</button>
+                            <button onClick={() => authStop(STORE)}>STOP</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH SUBSCRIBE</b> - Send request to a remote Authenticator daemon to subscribe an endpoint URL to receive authorisation requests
 notifications</p>
                             <input type='text' name='subscribe-notifs-endpoint' placeholder='notifs-endpoint'></input>
-                            <button onClick={() => authSubscribe(setConsole, consoled)}>SUBSCRIBE</button>
+                            <button onClick={() => authSubscribe(STORE)}>SUBSCRIBE</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH UNLOCK</b> - Send request to a remote Authenticator daemon to unlock a Safe</p>
-                            <button onClick={() => authUnlock(setConsole, consoled)}>UNLOCK</button>
+                            <button onClick={() => authUnlock(STORE)}>UNLOCK</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH UNSUBSCRIBE</b> - Send request to a remote Authenticator daemon to unsubscribe an endpoint URL from authorisation requests notifications</p>
                             <input type='text' name='unsubscribe-notifs-endpoint' placeholder='notifs-endpoint'></input>
-                            <button onClick={() => authUnsubscribe(setConsole, consoled)}>UNSUBSCRIBE</button>
+                            <button onClick={() => authUnsubscribe(STORE)}>UNSUBSCRIBE</button>
                         </li>
                         <br/>
                         <li>
                             <p><b>AUTH UPDATE</b> - Update sn_authd binary to a new available released version</p>
-                            <button onClick={() => authUpdate(setConsole, consoled)}>UPDATE</button>
+                            <button onClick={() => authUpdate(STORE)}>UPDATE</button>
                         </li>
                     </ul>
                     <br/>
@@ -221,12 +221,12 @@ notifications</p>
                         <h3 style={{color: 'red'}}>Command Sequences</h3>
                         <li>
                             <p>Create Default and Login:</p>
-                            <button onClick={() => createAndLogin(setConsole, consoled)}>Initialize</button>
+                            <button onClick={() => createAndLogin(STORE)}>Initialize</button>
                         </li>
                         <br/>
                         <li>
                             <p>Re-authenticate with Default Credentials</p>
-                            <button onClick={() => reauth(setConsole, consoled)}>Login</button>
+                            <button onClick={() => reauth(STORE)}>Login</button>
                         </li>
                         <br/>
                     </ul>

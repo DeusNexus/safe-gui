@@ -1,63 +1,63 @@
 import React, { useState } from 'react';
-import { postReq } from '../Functions'
+import { postReq } from '../../Functions'
 
-const keysBalance = (setConsole, consoled) => {
-    postReq(setConsole, consoled,`/api/keys/balance`)
+const keysBalance = (STORE) => {
+    postReq(STORE,`/api/keys/balance`)
 }
 
-const keysCreate = (setConsole, consoled, keysCreateTestCoins, keysCreatePreload, keysCreatePayWith) => {
+const keysCreate = (STORE, keysCreateTestCoins, keysCreatePreload, keysCreatePayWith) => {
     const flags = `${keysCreateTestCoins ? `--test-coins`:''}`
     const options = `${keysCreatePreload ? `--preload ${keysCreatePreload} ${!keysCreateTestCoins?`--pay-with ${keysCreatePayWith}`:''}`:''}`
-    postReq(setConsole, consoled,`/api/keys/create`, flags, options)
+    postReq(STORE,`/api/keys/create`, flags, options)
 }
 
-const keysHelp = (setConsole, consoled) => {
-    postReq(setConsole, consoled,`/api/keys/help`)
+const keysHelp = (STORE) => {
+    postReq(STORE,`/api/keys/help`)
 }
 
-const keysShow = (setConsole, consoled, keysShowURL, keysShowSK) => {
+const keysShow = (STORE, keysShowURL, keysShowSK) => {
     const keyUrl = encodeURIComponent(keysShowURL)
     const flags = keysShowSK ? `--show-sk` : ''
     const options = ''
-    postReq(setConsole, consoled, keyUrl ? `/api/keys/show/${keyUrl}` : `/api/keys/show`, flags, options)
+    postReq(STORE, keyUrl ? `/api/keys/show/${keyUrl}` : `/api/keys/show`, flags, options)
 }
 
-const keysTransfer = (setConsole, consoled, keysTransferAmount, keysTransferFrom, keysTransferTo) => {
+const keysTransfer = (STORE, keysTransferAmount, keysTransferFrom, keysTransferTo) => {
     const amount = keysTransferAmount
     const flags = ''
     const options = `--from ${keysTransferFrom} --to ${keysTransferTo}`
-    postReq(setConsole, consoled,`/api/keys/transfer/${amount}`,flags,options)
+    postReq(STORE,`/api/keys/transfer/${amount}`,flags,options)
 }
 
-const walletBalance = (setConsole, consoled) => {
-    postReq(setConsole, consoled,`/api/wallet/balance`)
+const walletBalance = (STORE) => {
+    postReq(STORE,`/api/wallet/balance`)
 }
 
-const walletCreate = (setConsole, consoled, walletCreateName, walletCreateTestCoins, walletCreatePreload, walletCreatePayWith) => {
+const walletCreate = (STORE, walletCreateName, walletCreateTestCoins, walletCreatePreload, walletCreatePayWith) => {
     const flags = walletCreateTestCoins ? `--test-coins` : ''
     const options = `--name ${walletCreateName} ${walletCreatePreload ? `--preload ${walletCreatePreload}`: ''} ${!walletCreateTestCoins?`--pay-with ${walletCreatePayWith}`:''}`
-    postReq(setConsole, consoled,`/api/wallet/create`,flags,options)
+    postReq(STORE,`/api/wallet/create`,flags,options)
 }
 
-const walletHelp = (setConsole, consoled) => {
-    postReq(setConsole, consoled,`/api/wallet/help`)
+const walletHelp = (STORE) => {
+    postReq(STORE,`/api/wallet/help`)
 }
 
-const walletInsert = (setConsole, consoled, walletInsertTarget, walletInsertSK, walletInsertName) => {
+const walletInsert = (STORE, walletInsertTarget, walletInsertSK, walletInsertName) => {
     const target = walletInsertTarget
     const flags = ''
     const options = `--sk ${walletInsertSK}${walletInsertName?` --name ${walletInsertName}`:''}`
-    postReq(setConsole, consoled,`/api/wallet/insert/${target}`, flags, options)
+    postReq(STORE,`/api/wallet/insert/${target}`, flags, options)
 }
 
-const walletTransfer = (setConsole, consoled, walletTransferAmount, walletTransferFrom, walletTransferTo) => {
+const walletTransfer = (STORE, walletTransferAmount, walletTransferFrom, walletTransferTo) => {
     const amount = walletTransferAmount
     const flags = ''
     const options = `--from ${walletTransferFrom} --to ${walletTransferTo}`
-    postReq(setConsole, consoled,`/api/wallet/transfer/${amount}`, flags, options)
+    postReq(STORE,`/api/wallet/transfer/${amount}`, flags, options)
 }
 
-const KeyWallet = ({setConsole, consoled}) => {
+const KeyWallet = ({STORE}) => {
     const [keysShowURL, setKeysShowURL] = useState('')
     const [keysShowSK, setKeysShowSK] = useState(false)
 
@@ -93,7 +93,7 @@ const KeyWallet = ({setConsole, consoled}) => {
            <ul>
                <li>
                    <p><b>KEYS BALANCE</b> - Query a SafeKey's current balance</p>
-                   <button onClick={() => keysBalance(setConsole, consoled)}>BALANCE</button>
+                   <button onClick={() => keysBalance(STORE)}>BALANCE</button>
                </li>
                <br/>
                <li>
@@ -118,12 +118,12 @@ const KeyWallet = ({setConsole, consoled}) => {
                         placeholder='Pay with SK - Testcoins Disabled'
                         onChange={(e)=>setKeysCreatePayWith(e.target.value)}
                     />}
-                   <button onClick={() => keysCreate(setConsole, consoled, keysCreateTestCoins, keysCreatePreload, keysCreatePayWith)}>CREATE</button>
+                   <button onClick={() => keysCreate(STORE, keysCreateTestCoins, keysCreatePreload, keysCreatePayWith)}>CREATE</button>
                </li>
                <br/>
                <li>
                    <p><b>KEYS HELP</b> - Manage keys on the SAFE Network</p>
-                   <button onClick={() => keysHelp(setConsole, consoled)}>HELP</button>
+                   <button onClick={() => keysHelp(STORE)}>HELP</button>
                </li>
                <br/>
                <li>
@@ -142,7 +142,7 @@ const KeyWallet = ({setConsole, consoled}) => {
                         placeholder='Keyurl (Optional)'
                         onChange={(e)=>setKeysShowURL(e.target.value)}
                     />
-                   <button onClick={() => keysShow(setConsole, consoled,keysShowURL, keysShowSK)}>SHOW</button>
+                   <button onClick={() => keysShow(STORE,keysShowURL, keysShowSK)}>SHOW</button>
                </li>
                <br/>
                <li>
@@ -165,7 +165,7 @@ const KeyWallet = ({setConsole, consoled}) => {
                         placeholder='Amount'
                         onChange={(e)=>setKeysTransferAmount(e.target.value)}
                     />
-                   <button onClick={() => keysTransfer(setConsole, consoled, keysTransferAmount, keysTransferFrom, keysTransferTo)}>TRANSFER</button>
+                   <button onClick={() => keysTransfer(STORE, keysTransferAmount, keysTransferFrom, keysTransferTo)}>TRANSFER</button>
                </li>
                <br/>
                <li>
@@ -176,7 +176,7 @@ const KeyWallet = ({setConsole, consoled}) => {
                         placeholder='Target - The target Wallet to check the total balance'
                         onChange={(e)=>setWalletBalanceTarget(e.target.value)}
                     />
-                   <button onClick={() => walletBalance(setConsole, consoled, walletBalanceTarget)}>BALANCE</button>
+                   <button onClick={() => walletBalance(STORE, walletBalanceTarget)}>BALANCE</button>
                </li>
                <br/>
                <li>
@@ -208,12 +208,12 @@ const KeyWallet = ({setConsole, consoled}) => {
                         placeholder='Pay with SK - Testcoins Disabled'
                         onChange={(e)=>setWalletCreatePayWith(e.target.value)}
                     />}
-                   <button onClick={() => walletCreate(setConsole, consoled, walletCreateName, walletCreateTestCoins, walletCreatePreload, walletCreatePayWith)}>CREATE</button>
+                   <button onClick={() => walletCreate(STORE, walletCreateName, walletCreateTestCoins, walletCreatePreload, walletCreatePayWith)}>CREATE</button>
                </li>
                <br/>
                <li>
                    <p><b>WALLET HELP</b> - Manage wallets on the SAFE Network</p>
-                   <button onClick={() => walletHelp(setConsole, consoled)}>HELP</button>
+                   <button onClick={() => walletHelp(STORE)}>HELP</button>
                </li>
                <br/>
                <li>
@@ -236,7 +236,7 @@ const KeyWallet = ({setConsole, consoled}) => {
                         placeholder='Name - The name to give this spendable balance'
                         onChange={(e)=>setWalletInsertName(e.target.value)}
                     />
-                   <button onClick={() => walletInsert(setConsole, consoled, walletInsertTarget, walletInsertSK, walletInsertName)}>INSERT</button>
+                   <button onClick={() => walletInsert(STORE, walletInsertTarget, walletInsertSK, walletInsertName)}>INSERT</button>
                </li>
                <br/>
                <li>
@@ -260,7 +260,7 @@ const KeyWallet = ({setConsole, consoled}) => {
                         onChange={(e)=>setWalletTransferAmount(e.target.value)}
                     />
                    <button onClick={() => walletTransfer(
-                       setConsole, consoled, walletTransferAmount, 
+                       STORE, walletTransferAmount, 
                        walletTransferFrom, walletTransferTo)
                        }>TRANSFER</button>
                </li>
