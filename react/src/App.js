@@ -90,7 +90,7 @@ export default function App() {
               <h2><code>Console Output</code></h2>
             </div>
             <div className='consoleBg'>
-              <textarea readOnly='true' value={consoled}>
+              <textarea readOnly={true} value={consoled}>
               </textarea>
             </div>
         </div>

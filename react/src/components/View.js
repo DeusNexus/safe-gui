@@ -31,7 +31,7 @@ const View = ({setConsole, consoled}) => {
            <ul>
                <br/>
                <li>
-                   <b>Inspect XOR-URL container</b><br/>
+                   <p><b>Inspect XOR-URL container</b> - Inspect data on the SAFE Network providing only metadata information about the content</p>
                    <input type='text' 
                         name='dog_xorurl' 
                         placeholder='XOR-URL'
@@ -41,7 +41,7 @@ const View = ({setConsole, consoled}) => {
                </li>
                <br/>
                <li>
-                   <b>View XOR-URL content (file/folder)</b><br/>
+                   <p><b>View XOR-URL content (file/folder)</b> - Read data on the SAFE Network</p>
                    <input 
                         type='text' 
                         name='cat_xorurl' 
@@ -52,7 +52,7 @@ const View = ({setConsole, consoled}) => {
                </li>
                <br/>
                <li>
-                   <b>Download XOR-URL content (file/folder)</b><br/>
+                   <p><b>Download XOR-URL content (file/folder)</b> - Pipe Datastream into a local file</p>
                    <input type='text' 
                         name='download_xorurl' 
                         placeholder='XOR-URL'

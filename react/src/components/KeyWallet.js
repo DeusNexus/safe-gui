@@ -92,12 +92,12 @@ const KeyWallet = ({setConsole, consoled}) => {
            <br/>
            <ul>
                <li>
-                   <b>KEYS BALANCE</b><br/>
+                   <p><b>KEYS BALANCE</b> - Query a SafeKey's current balance</p>
                    <button onClick={() => keysBalance(setConsole, consoled)}>BALANCE</button>
                </li>
                <br/>
                <li>
-                   <b>KEYS CREATE</b><br/>
+                   <p><b>KEYS CREATE</b> - Create a new SafeKey</p>
                    <span><code>Use Testcoins</code> &ensp;
                    <input
                         type='checkbox'
@@ -122,12 +122,12 @@ const KeyWallet = ({setConsole, consoled}) => {
                </li>
                <br/>
                <li>
-                   <b>KEYS HELP</b><br/>
+                   <p><b>KEYS HELP</b> - Manage keys on the SAFE Network</p>
                    <button onClick={() => keysHelp(setConsole, consoled)}>HELP</button>
                </li>
                <br/>
                <li>
-                   <b>KEYS SHOW</b><br/>
+                   <p><b>KEYS SHOW</b> - Show information about a SafeKey, by default it will show info about the one owned by CLI (if found)</p>
                    <span><code>Show SK</code> &ensp;
                         <input
                             type='checkbox'
@@ -146,7 +146,7 @@ const KeyWallet = ({setConsole, consoled}) => {
                </li>
                <br/>
                <li>
-                   <b>KEYS TRANSFER</b><br/>
+                   <p><b>KEYS TRANSFER</b> - Transfer safecoins from one SafeKey to another, or to a Wallet</p>
                    <input 
                         type='text' 
                         name='keys-transfer-from' 
@@ -169,7 +169,7 @@ const KeyWallet = ({setConsole, consoled}) => {
                </li>
                <br/>
                <li>
-                   <b>WALLET BALANCE</b><br/>
+                   <p><b>WALLET BALANCE</b> - Query a Wallet's total balance</p>
                    <input 
                         type='text' 
                         name='wallet-balance-target' 
@@ -180,7 +180,7 @@ const KeyWallet = ({setConsole, consoled}) => {
                </li>
                <br/>
                <li>
-                   <b>WALLET CREATE</b><br/>
+                   <p><b>WALLET CREATE</b> - Create a new Wallet</p>
                    <input
                         type='text'
                         name='wallet-create-name'
@@ -212,12 +212,12 @@ const KeyWallet = ({setConsole, consoled}) => {
                </li>
                <br/>
                <li>
-                   <b>WALLET HELP</b><br/>
+                   <p><b>WALLET HELP</b> - Manage wallets on the SAFE Network</p>
                    <button onClick={() => walletHelp(setConsole, consoled)}>HELP</button>
                </li>
                <br/>
                <li>
-                   <b>WALLET INSERT</b><br/>
+                   <p><b>WALLET INSERT</b> - Insert a spendable balance into a Wallet</p>
                    <input 
                         type='text' 
                         name='wallet-insert-target' 
@@ -240,7 +240,7 @@ const KeyWallet = ({setConsole, consoled}) => {
                </li>
                <br/>
                <li>
-                   <b>WALLET TRANSFER</b><br/>
+                   <p><b>WALLET TRANSFER</b> - Transfer safecoins from one Wallet to another, or to a SafeKey</p>
                    <input 
                         type='text' 
                         name='wallet-transfer-from' 

@@ -43,38 +43,38 @@ const Node = ({setConsole, consoled}) => {
            <br/>
            <ul>
                <li>
-                   <b>NODE BIN-VERSION</b><br/>
+                   <p><b>NODE BIN-VERSION</b> - Gets the version of `sn_node` binary</p>
                    <button onClick={() => binVersion(setConsole, consoled)}>BIN-VERSION</button>
                </li>
                <br/>
                <li>
-                   <b>NODE HELP</b><br/>
+                   <p><b>NODE HELP</b> - Commands to manage Safe Network Nodes</p>
                    <button onClick={() => help(setConsole, consoled)}>HELP</button>
                </li>
                <br/>
                <li>
-                   <b>NODE INSTALL</b><br/>
+                   <p><b>NODE INSTALL</b>- Install latest sn_node released version in the system</p>
                    <button onClick={() => install(setConsole, consoled)}>INSTALL</button>
                </li>
                <br/>
                <li>
-                   <b>NODE JOIN</b><br/>
+                   <p><b>NODE JOIN</b> - Join an already running network</p>
                    <input type='text' name='join-network-name' placeholder='network-name' onChange={(e) => setNodeJoinVal(e.target.value)}></input>
                    <button onClick={() => join(setConsole, consoled, nodeJoinVal)}>JOIN</button>
                </li>
                <br/>
                <li>
-                   <b>NODE KILLALL</b><br/>
+                   <p><b>NODE KILLALL</b> - Shutdown all running nodes processes</p>
                    <button onClick={() => killall(setConsole, consoled)}>KILLALL</button>
                </li>
                <br/>
                <li>
-                   <b>NODE RUN-BABY-FLEMING</b><br/>
+                   <p><b>NODE RUN-BABY-FLEMING</b> - Run nodes to form a local single-section Safe network</p>
                    <button onClick={() => runBabyFleming(setConsole, consoled)}>RUN-BABY-FLEMING</button>
                </li>
                <br/>
                <li>
-                   <b>NODE UPDATE</b><br/>
+                   <p><b>NODE UPDATE</b> - Update to latest sn_node released version</p>
                    <button onClick={() => update(setConsole, consoled)}>UPDATE</button>
                </li>
            </ul>

@@ -103,109 +103,109 @@ const Files = ({setConsole, consoled}) => {
            <br/>
            <ul>
                 <li>
-                   <b>FILES ADD</b><br/>
+                   <p><b>FILES ADD</b> - Add a file to an existing FilesContainer on the network</p>
                    <input type='file' name='files-add-location' placeholder='PATH to File or Folder'></input>
                    <input type='text' name='files-add-target' placeholder='Target PATH (optional)'></input>
                    <button onClick={() => filesAdd(setConsole, consoled)}>ADD</button>
                </li>
                <br/>
                <li>
-                   <b>FILES GET</b><br/>
+                   <p><b>FILES GET</b> - Get a file or folder from the SAFE Network</p>
                    <input type='text' name='files-get-source' placeholder='Source'></input>
                    <input type='file' name='files-get-dest' placeholder='Dest'></input>
                    <button onClick={() => filesGet(setConsole, consoled)}>GET</button>
                </li>
                <br/>
                <li>
-                   <b>FILES HELP</b><br/>
+                   <p><b>FILES HELP</b> - Manage files on the SAFE Network</p>
                    <button onClick={() => filesHelp(setConsole, consoled)}>HELP</button>
                </li>
                <br/>
                <li>
-                   <b>FILES LS</b><br/>
+                   <p><b>FILES LS</b> - List files found in an existing FilesContainer on the network</p>
                    <input type='text' name='files-ls-target' placeholder='XORURL'></input>
                    <button onClick={() => filesLs(setConsole, consoled)}>PUT</button>
                </li>
                <br/>
                <li>
-                   <b>FILES PUT</b><br/>
+                   <p><b>FILES PUT</b> - Put a file or folder's files onto the SAFE Network</p>
                    <input type='file' name='files-put-location' placeholder='PATH to File or Folder'></input>
                    <input type='text' name='files-put-dest' placeholder='Target PATH (optional)'></input>
                    <button onClick={() => filesPut(setConsole, consoled)}>PUT</button>
                </li>
                <li>
-                   <b>FILES RM</b><br/>
+                   <p><b>FILES RM</b> - Remove a file from an existing FilesContainer on the network</p>
                    <input type='text' name='files-rm-target' placeholder='Target'></input>
                    <button onClick={() => filesRm(setConsole, consoled)}>RM</button>
                </li>
                <br/>
                <li>
-                   <b>FILES SYNC</b><br/>
+                   <p><b>FILES SYNC</b> - Sync files to the SAFE Network</p>
                    <input type='file' name='files-sync-location' placeholder='Location'></input>
                    <input type='text' name='files-sync-target' placeholder='Target'></input>
                    <button onClick={() => filesSync(setConsole, consoled)}>SYNC</button>
                </li>
                <br/>
                <li>
-                   <b>FILES TREE</b><br/>
+                   <p><b>FILES TREE</b> - Recursively list files found in an existing FilesContainer on the network</p>
                    <input type='text' name='files-tree-target' placeholder='Target'></input>
                    <button onClick={() => filesTree(setConsole, consoled)}>TREE</button>
                </li>
                <br/>
                <li>
-                   <b>XORURL</b><br/>
+                   <p><b>XORURL</b>- Obtain the XOR-URL of data without uploading it to the network, or decode XOR-URLs</p>
                    <input type='text' name='xorurl-location' placeholder='Location'></input>
                    <button onClick={() => xorurl(setConsole, consoled)}>XORURL</button>
                </li>
                <br/>
                <li>
-                   <b>XORURL DECODE</b><br/>
+                   <p><b>XORURL DECODE</b> - Decode a XOR-URL extracting all the information encoded it in</p>
                    <input type='text' name='xorurl-decode-xorurl' placeholder='XORURL'></input>
                    <button onClick={() => xorurlDecode(setConsole, consoled)}>DECODE</button>
                </li>
                <br/>
                <li>
-                   <b>XORURL HELP</b><br/>
+                   <p><b>XORURL HELP</b></p>
                    <button onClick={() => xorurlHelp(setConsole, consoled)}>HELP</button>
                </li>
                <br/>
                <li>
-                   <b>SEQ APPEND</b><br/>
+                   <b>SEQ APPEND</b><p>- Append an element to an existing Sequence on the network</p>
                    <input type='file' name='seq-append-data' placeholder='Data'></input>
                    <input type='text' name='seq-append-target' placeholder='Target'></input>
                    <button onClick={() => seqAppend(setConsole, consoled)}>APPEND</button>
                </li>
                <br/>
                <li>
-                   <b>SEQ HELP</b><br/>
+                   <p><b>SEQ HELP</b> - Manage Sequences on the Safe Network</p>
                    <button onClick={() => seqHelp(setConsole, consoled)}>HELP</button>
                </li>
                <br/>
                <li>
-                   <b>SEQ STORE</b><br/>
+                   <p><b>SEQ STORE</b> - Stores a new Sequence on the Safe Network</p>
                    <input type='file' name='seq-store-data' placeholder='Data'></input>
                    <button onClick={() => seqStore(setConsole, consoled)}>STORE</button>
                </li>
                <br/>
                <li>
-                   <b>NRS ADD</b><br/>
+                   <p><b>NRS ADD</b> - Add a subname to an existing NRS name, or updates its link if it already exists</p>
                    <input type='text' name='nrs-add-name' placeholder='Name'></input>
                    <button onClick={() => nrsAdd(setConsole, consoled)}>ADD</button>
                </li>
                <br/>
                <li>
-                   <b>NRS CREATE</b><br/>
+                   <p><b>NRS CREATE</b> - Create a new public name</p>
                    <input type='text' name='nrs-create-name' placeholder='Name'></input>
                    <button onClick={() => nrsCreate(setConsole, consoled)}>Create</button>
                </li>
                <br/>
                <li>
-                   <b>NRS HELP</b><br/>
+                   <p><b>NRS HELP</b> - Manage public names on the SAFE Network</p>
                    <button onClick={() => nrsHelp(setConsole, consoled)}>HELP</button>
                </li>
                <br/>
                <li>
-                   <b>NRS REMOVE</b><br/>
+                   <p><b>NRS REMOVE</b> - Remove a subname from an NRS name</p>
                    <input type='text' name='nrs-remove-name' placeholder='Name'></input>
                    <button onClick={() => nrsRemove(setConsole, consoled)}>REMOVE</button>
                </li>

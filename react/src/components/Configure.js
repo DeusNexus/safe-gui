@@ -96,12 +96,12 @@ const Configure = ({ setConsole, consoled }) => {
                     </li>
                     <br/>
                     <li>
-                        <b>UPDATE</b><br/>
+                        <p><b>UPDATE</b> - Update the application to the latest available version</p>
                         <button onClick={() => update(setConsole, consoled)}>UPDATE</button>
                     </li>
                     <br/>
                     <li>
-                        <b>CONFIG</b><br/>
+                        <p><b>CONFIG</b> - CLI config settings</p>
                         <button onClick={() => config(setConsole, consoled)}>CONFIG</button>
                     </li>
                     <br/>
@@ -113,12 +113,17 @@ const Configure = ({ setConsole, consoled }) => {
                     <li>
                         <b>CONFIG ADD NETWORK</b><br/>
                         <input type='text' name='config-add-network-networkname' placeholder='Network Name'></input>
-                        <input type='file' name='config-add-network-configlocation' placeholder='Config Location'></input>
+                        <input 
+                            type='file' 
+                            name='config-add-network-configlocation' 
+                            placeholder='Config Location'
+                            onChange={(e)=>console.log(e.target.value)}
+                        />
                         <button onClick={() => configAddNetwork(setConsole, consoled)}>ADD NETWORK</button>
                     </li>
                     <br/>
                     <li>
-                        <b>CONFIG CLEAR</b><br/>
+                        <p><b>CONFIG CLEAR</b> - Remove all config settings</p>
                         <button onClick={() => configClear(setConsole, consoled)}>CLEAR</button>
                     </li>
                     <br/>
@@ -139,52 +144,52 @@ const Configure = ({ setConsole, consoled }) => {
                     </li>
                     <br/>
                     <li>
-                        <b>SETUP COMPLETIONS</b><br/>
+                        <p><b>SETUP COMPLETIONS</b> - Dump shell completions</p>
                         <button onClick={() => setupCompletions(setConsole, consoled)}>COMPLETIONS</button>
                     </li>
                     <br/>
                     <li>
-                        <b>SETUP HELP</b><br/>
+                        <p><b>SETUP HELP</b> - Perform setup tasks</p>
                         <button onClick={() => setupHelp(setConsole, consoled)}>HELP</button>
                     </li>
                     <br/>
                     <li>
-                        <b>NETWORKS</b><br/>
+                        <p><b>NETWORKS</b></p>
                         <button onClick={() => networks(setConsole, consoled)}>NETWORKS</button>
                     </li>
                     <br/>
                     <li>
-                        <b>NETWORKS ADD</b><br/>
+                        <p><b>NETWORKS ADD</b> - Add a network to the CLI config using an existing network configuration file</p>
                         <input type='text' name='networks-add-networkname' placeholder='Network Name'></input>
                         <input type='file' name='networks-add-configlocation' placeholder='Config Location'></input>
                         <button onClick={() => networksAdd(setConsole, consoled)}>ADD</button>
                     </li>
                     <br/>
                     <li>
-                        <b>NETWORKS CHECK</b><br/>
+                        <p><b>NETWORKS CHECK</b> - Check current network configuration and try to match it to networks in the CLI config</p>
                         <button onClick={() => networksCheck(setConsole, consoled)}>CHECK</button>
                     </li>
                     <br/>
                     <li>
-                        <b>NETWORKS HELP</b><br/>
+                        <p><b>NETWORKS HELP</b> - Switch between SAFE networks</p>
                         <button onClick={() => networksHelp(setConsole, consoled)}>HELP</button>
                     </li>
                     <br/>
                     <li>
-                        <b>NETWORKS REMOVE</b><br/>
+                        <p><b>NETWORKS REMOVE</b> - Remove a network from the CLI config</p>
                         <input type='text' name='networks-remove-networkname' placeholder='Network Name'></input>
                         <button onClick={() => networksRemove(setConsole, consoled)}>REMOVE</button>
                     </li>
                     <br/>
                     <li>
-                        <b>NETWORKS SET</b><br/>
+                        <p><b>NETWORKS SET</b> - Set the list of IP addrsses (and port numbers) for a network in the CLI config</p>
                         <input type='text' name='networks-set-networkname' placeholder='Network Name'></input>
                         <input type='text' name='networks-set-addresses' placeholder='Addresses...'></input>
                         <button onClick={() => networksSet(setConsole, consoled)}>SET</button>
                     </li>
                     <br/>
                     <li>
-                        <b>NETWORKS SWITCH</b><br/>
+                        <p><b>NETWORKS SWITCH</b> - Switch to a different SAFE network</p>
                         <input type='text' name='networks-switch-networkname' placeholder='Network Name'></input>
                         <button onClick={() => networksSwitch(setConsole, consoled)}>SWITCH</button>
                     </li>

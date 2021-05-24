@@ -116,102 +116,103 @@ const Auth = ({ setConsole, consoled }) => {
                         </li> */}
                         <h3 style={{color: 'red'}}>Generic Commands</h3>
                         <li>
-                            <p>AUTH ALLOW:</p>
+                            <p><b>AUTH ALLOW</b> - Send request to a remote Authenticator daemon to allow an authorisation request</p>
                             <input type='text' name='allow-req-id' placeholder='req-id'></input>
                             <button onClick={() => authAllow(setConsole, consoled)}>ALLOW</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH APPS:</p>
+                            <p><b>AUTH APPS</b> - Send request to a remote Authenticator daemon to retrieve the list of the authorised applications</p>
                             <button onClick={() => authApps(setConsole, consoled)}>APPS</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH BIN-VERSION:</p>
+                            <p><b>AUTH BIN-VERSION</b> - Shows the version of the Authenticator binary</p>
                             <button onClick={() => authBinVersion(setConsole, consoled)}>BIN-VERSION</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH CLEAR:</p>
+                            <p><b>AUTH CLEAR</b> - Clear Safe CLI authorisation credentials from local file</p>
                             <button onClick={() => authClear(setConsole, consoled)}>CLEAR</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH CREATE:</p>
+                            <p><b>AUTH CREATE</b> - Send request to a remote Authenticator daemon to create a new Safe</p>
                             <button onClick={() => authCreate(setConsole, consoled)}>CREATE</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH DENY:</p>
+                            <p><b>AUTH DENY</b> - Send request to a remote Authenticator daemon to deny an authorisation request</p>
                             <input type='text' name='deny-req-id' placeholder='req-id'></input>
                             <button onClick={() => authDeny(setConsole, consoled)}>DENY</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH HELP:</p>
+                            <p><b>AUTH HELP</b> - Authorise the SAFE CLI and interact with a remote Authenticator daemon</p>
                             <button onClick={() => authHelp(setConsole, consoled)}>HELP</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH INSTALL:</p>
+                            <p><b>AUTH INSTALL</b> - Install latest sn_authd released version in the system</p>
                             <button onClick={() => authInstall(setConsole, consoled)}>INSTALL</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH LOCK:</p>
+                            <p><b>AUTH LOCK</b> - Send request to a remote Authenticator daemon to lock any currently unlocked Safe</p>
                             <button onClick={() => authLock(setConsole, consoled)}>LOCK</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH REQS:</p>
+                            <p><b>AUTH REQS</b> - Send request to a remote Authenticator daemon to retrieve the list of the pending authorisation requests</p>
                             <button onClick={() => authReqs(setConsole, consoled)}>REQS</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH RESTART:</p>
+                            <p><b>AUTH RESTART</b> - Restarts the Authenticator daemon if it's running already</p>
                             <button onClick={() => authRestart(setConsole, consoled)}>RESTART</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH REVOKE:</p>
+                            <p><b>AUTH REVOKE</b> - Send request to a remote Authenticator daemon to revoke permissions from a previously authorised application</p>
                             <input type='text' name='revoke-app-id' placeholder='app-id'></input>
                             <button onClick={() => authRevoke(setConsole, consoled)}>REVOKE</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH START:</p>
+                            <p><b>AUTH START</b> - Starts the Authenticator daemon if it's not running already</p>
                             <button onClick={() => authStart(setConsole, consoled)}>START</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH STATUS:</p>
+                            <p><b>AUTH STATUS</b> - Send request to a remote Authenticator daemon to obtain a status report</p>
                             <button onClick={() => authStatus(setConsole, consoled)}>STATUS</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH STOP:</p>
+                            <p><b>AUTH STOP</b> - Stops the Authenticator daemon if it's running</p>
                             <button onClick={() => authStop(setConsole, consoled)}>STOP</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH SUBSCRIBE:</p>
+                            <p><b>AUTH SUBSCRIBE</b> - Send request to a remote Authenticator daemon to subscribe an endpoint URL to receive authorisation requests
+notifications</p>
                             <input type='text' name='subscribe-notifs-endpoint' placeholder='notifs-endpoint'></input>
                             <button onClick={() => authSubscribe(setConsole, consoled)}>SUBSCRIBE</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH UNLOCK:</p>
+                            <p><b>AUTH UNLOCK</b> - Send request to a remote Authenticator daemon to unlock a Safe</p>
                             <button onClick={() => authUnlock(setConsole, consoled)}>UNLOCK</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH UNSUBSCRIBE:</p>
+                            <p><b>AUTH UNSUBSCRIBE</b> - Send request to a remote Authenticator daemon to unsubscribe an endpoint URL from authorisation requests notifications</p>
                             <input type='text' name='unsubscribe-notifs-endpoint' placeholder='notifs-endpoint'></input>
                             <button onClick={() => authUnsubscribe(setConsole, consoled)}>UNSUBSCRIBE</button>
                         </li>
                         <br/>
                         <li>
-                            <p>AUTH UPDATE:</p>
+                            <p><b>AUTH UPDATE</b> - Update sn_authd binary to a new available released version</p>
                             <button onClick={() => authUpdate(setConsole, consoled)}>UPDATE</button>
                         </li>
                     </ul>
