@@ -8,15 +8,6 @@ import CardList from './../cardlist/CardList';
 const Node = ({STORE}) => {
     const [nodeJoinVal, setNodeJoinVal] = useState('')
 
-    //hideShow
-    const [showNodeBin, setShowNodeBin] = useState(false)
-    const [showNodeHelp, setShowNodeHelp] = useState(false)
-    const [showNodeInstall, setShowNodeInstall] = useState(false)
-    const [showNodeJoin, setShowNodeJoin] = useState(false)
-    const [showNodeKillAll, setShowNodeKillAll] = useState(false)
-    const [showNodeRunBabyFleming, setShowNodeRunBabyFleming] = useState(false)
-    const [showNodeUpdate, setShowNodeUpdate] = useState(false)
-
     return (
         <div className='container'>
         <header>

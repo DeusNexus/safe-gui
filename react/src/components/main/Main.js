@@ -12,6 +12,7 @@ function Main() {
                     <Card 
                         title={'Clean and Install latest (using default directory):'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>rm -rf $HOME/.safe</code><br/>
@@ -25,6 +26,7 @@ function Main() {
                     <Card 
                         title={'Add, Switch and Check Test-Network:'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>safe networks add fleming-testnet https://sn-node.s3.eu-west-2.amazonaws.com/config/node_connection_info.config</code><br/>
@@ -35,6 +37,7 @@ function Main() {
                     <Card 
                         title={'Create Default and Login:'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>safe authd restart</code><br/>
@@ -46,6 +49,7 @@ function Main() {
                     <Card 
                         title={'Join network with Node (optional):'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>safe node killall</code><br/>
@@ -55,6 +59,7 @@ function Main() {
                     <Card 
                         title={'Upload Custom File to the Network:'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>safe files put $from $to</code>
@@ -63,6 +68,7 @@ function Main() {
                     <Card 
                         title={'Upload Custom Files/Folder to the Network:'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>safe files put --recursive $from $to</code>
@@ -71,6 +77,7 @@ function Main() {
                     <Card 
                         title={'Inspect XOR-URL container:'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>safe dog $xor_url</code>
@@ -79,6 +86,7 @@ function Main() {
                     <Card 
                         title={'View XOR-URL content (file/folder):'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>safe cat $xor_url</code>
@@ -87,6 +95,7 @@ function Main() {
                     <Card 
                         title={'Download XOR-URL content (file/folder):'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>safe dog $xor_url --json</code><br/>
@@ -96,6 +105,7 @@ function Main() {
                     <Card 
                         title={'Generate New SafeKey Preloaded with 1000 Test-coins:'}
                         subtitle={''}
+                        showDefault={true}
                     >
                         <div className='textBg'>
                             <code>safe keys create --test-coins --preload 1000</code>

@@ -138,13 +138,13 @@ const Auth = ({ STORE }) => {
                     </CardList>
                     <CardList title={<h3 style={{color: 'red'}}>Command Sequences</h3>}>
                         <Card
-                            title={'Create Default and Login:'}
+                            title={'Create Default and Login'}
                             subtitle={''}
                         >
                             <button onClick={() => createAndLogin(STORE)}>Initialize</button>
                         </Card>
                         <Card
-                            title={'Re-authenticate with Default Credentials:'}
+                            title={'Re-authenticate with Default Credentials'}
                             subtitle={''}
                         >
                             <button onClick={() => reauth(STORE)}>Login</button>

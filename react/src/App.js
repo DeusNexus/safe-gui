@@ -30,7 +30,7 @@ export default function App() {
         </span>
         <ul className={'navigation-menu'+style}>
           <li>
-            <a><Link to='/'>Main</Link></a>
+            <Link to='/'>Main</Link>
           </li>
           <li>
             <Link to='/configure'>Configure</Link> 

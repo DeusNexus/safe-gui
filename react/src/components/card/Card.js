@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { IoMdArrowDropdown } from 'react-icons/io';
 
-const Card = ({children, title, subtitle}) => {
+const Card = ({children, title, subtitle, showDefault}) => {
+    const [show, setShow] = useState(showDefault ? showDefault : false)
+
     return (
         <>
             <li>
@@ -12,10 +15,19 @@ const Card = ({children, title, subtitle}) => {
                         padding: '4px',
                     }}
                 >
-                    <span>
-                        <b>{title}</b> {subtitle ? <p>{`${subtitle}`}</p> : <br/>}
+                    <span onClick={() => setShow(!show)}>
+                        <b>{title}</b> {subtitle ? `- ${subtitle}` : <></>}
+                        <IoMdArrowDropdown/>
+                        <br/>
                     </span>
-                    {children}
+                    {
+                        show ?
+                            <>
+                                {children}
+                            </>
+                            : 
+                            <></>
+                        }
                 </div>
             </li>
             <br/>
