@@ -1,32 +1,32 @@
 import { postReq } from '../../Functions'
 
-export const binVersion = (STORE) => {
-    postReq(STORE,`/api/node/bin-version`)
+export const binVersion = async (STORE) => {
+    await postReq(STORE,`/api/node/bin-version`)
 }
 
-export const help = (STORE) => {
-    postReq(STORE,`/api/node/help`)
+export const help = async (STORE) => {
+    await postReq(STORE,`/api/node/help`)
 }
 
-export const install = (STORE) => {
-    postReq(STORE,`/api/node/install`)
+export const install = async (STORE) => {
+    await postReq(STORE,`/api/node/install`)
 }
 
-export const join = (STORE, nodeJoinVal) => {
+export const join = async (STORE, nodeJoinVal) => {
     const networkName = nodeJoinVal
-    postReq(STORE,`/api/node/join/${networkName}`)
+    await postReq(STORE,`/api/node/join/${networkName}`)
 }
 
-export const killall = (STORE) => {
-    postReq(STORE,`/api/node/killall`)
+export const killall = async (STORE) => {
+    await postReq(STORE,`/api/node/killall`)
 }
 
-export const runBabyFleming = (STORE) => {
+export const runBabyFleming = async (STORE) => {
     // const testing = '--testing'
     // const verbose = '-y'
-    postReq(STORE,`/api/node/run-baby-fleming`,'','')
+    await postReq(STORE,`/api/node/run-baby-fleming`,'','')
 }
 
-export const update = (STORE) => {
-    postReq(STORE,`/api/node/update`)
+export const update = async (STORE) => {
+    await postReq(STORE,`/api/node/update`)
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from './../card/Card';
 import CardList from './../cardlist/CardList';
+import { mainClean, mainInstallFull, mainAddSwitchCheck, mainCreateAndLogin, mainJoin } from './Main.utils';
 
-function Main() {
+function Main({STORE}) {
     return (
         <div className='container'>
             <header>
@@ -10,17 +11,28 @@ function Main() {
                 <h3>SAFE CLI commands that can be used in a graphical manner</h3>
                 <CardList title={''}>
                     <Card 
-                        title={'Clean and Install latest (using default directory):'}
+                        title={'Clean (using default directory):'}
                         subtitle={''}
                         showDefault={true}
                     >
                         <div className='textBg'>
                             <code>rm -rf $HOME/.safe</code><br/>
+                            <button onClick={() => mainClean(STORE)}>Execute Sequence</button>
+                        </div>
+                    </Card>
+                    <Card 
+                        title={'Clean and Install latest (using default directory):'}
+                        subtitle={''}
+                        showDefault={true}
+                    >
+                        <div className='textBg'>
                             <code>curl -so- https://sn-api.s3.amazonaws.com/install.sh | bash</code><br/>
                             <code>safe auth install</code><br/>
                             <code>safe node install</code><br/>
                             <code>safe auth bin-version</code><br/>
                             <code>safe node bin-version</code>
+                            <br/>
+                            <button onClick={() => mainInstallFull(STORE)}>Execute Sequence</button>
                         </div>
                     </Card>
                     <Card 
@@ -32,6 +44,8 @@ function Main() {
                             <code>safe networks add fleming-testnet https://sn-node.s3.eu-west-2.amazonaws.com/config/node_connection_info.config</code><br/>
                             <code>safe networks switch fleming-testnet</code><br/>
                             <code>safe networks check</code>
+                            <br/>
+                            <button onClick={() => mainAddSwitchCheck(STORE)}>Execute Sequence</button>
                         </div>
                     </Card>
                     <Card 
@@ -44,6 +58,8 @@ function Main() {
                             <code>safe authd create --test-coins --config default_credentials.json</code><br/>
                             <code>safe authd unlock --self-auth --config default_credentials.json</code><br/>
                             <code>safe authd status</code>
+                            <br/>
+                            <button onClick={() => mainCreateAndLogin(STORE)}>Execute Sequence</button>
                         </div>
                     </Card>
                     <Card 
@@ -54,9 +70,11 @@ function Main() {
                         <div className='textBg'>
                             <code>safe node killall</code><br/>
                             <code>safe node join</code>
+                            <br/>
+                            <button onClick={() => mainJoin(STORE)}>Execute Sequence</button>
                         </div>
                     </Card>
-                    <Card 
+                    {/* <Card 
                         title={'Upload Custom File to the Network:'}
                         subtitle={''}
                         showDefault={true}
@@ -110,7 +128,7 @@ function Main() {
                         <div className='textBg'>
                             <code>safe keys create --test-coins --preload 1000</code>
                         </div>
-                    </Card>
+                    </Card> */}
                 </CardList>
             </header>
         </div>

@@ -1,100 +1,100 @@
 import { postReq } from '../../Functions'
 
-// export const auth = (STORE) => {
-//     postReq(STORE,'/api/auth')
+// export const auth = async (STORE) => {
+//     await postReq(STORE,'/api/auth')
 // }
 
-export const authAllow = (STORE) => {
+export const authAllow = async (STORE) => {
     const reqId = 0
-    postReq(STORE,`/api/auth/allow/${reqId}`)
+    await postReq(STORE,`/api/auth/allow/${reqId}`)
 }
 
-export const authApps = (STORE) => {
-    postReq(STORE,'/api/auth/apps')
+export const authApps = async (STORE) => {
+    await postReq(STORE,'/api/auth/apps')
 }
 
-export const authBinVersion = (STORE) => {
-    postReq(STORE,'/api/auth/bin-version')
+export const authBinVersion = async (STORE) => {
+    await postReq(STORE,'/api/auth/bin-version')
 }
 
-export const authClear = (STORE) => {
-    postReq(STORE,'/api/auth/clear')
+export const authClear = async (STORE) => {
+    await postReq(STORE,'/api/auth/clear')
 }
 
-export const authCreate = (STORE) => {
-    postReq(STORE,'/api/auth/create', '--test-coins', '--config default_credentials.json')
+export const authCreate = async (STORE) => {
+    await postReq(STORE,'/api/auth/create', '--test-coins', '--config default_credentials.json')
 }
 
-export const authDeny = (STORE) => {
+export const authDeny = async (STORE) => {
     const reqId = 0
-    postReq(STORE,`/api/auth/deny/${reqId}`)
+    await postReq(STORE,`/api/auth/deny/${reqId}`)
 }
 
-export const authHelp = (STORE) => {
-    postReq(STORE,'/api/auth/help')
+export const authHelp = async (STORE) => {
+    await postReq(STORE,'/api/auth/help')
 }
 
-export const authInstall = (STORE) => {
-    postReq(STORE,'/api/auth/install')
+export const authInstall = async (STORE) => {
+    await postReq(STORE,'/api/auth/install')
 }
 
-export const authLock = (STORE) => {
-    postReq(STORE,'/api/auth/lock')
+export const authLock = async (STORE) => {
+    await postReq(STORE,'/api/auth/lock')
 }
 
-export const authReqs = (STORE) => {
-    postReq(STORE,'/api/auth/reqs')
+export const authReqs = async (STORE) => {
+    await postReq(STORE,'/api/auth/reqs')
 }
 
-export const authRestart = (STORE) => {
-    postReq(STORE,'/api/auth/restart')
+export const authRestart = async (STORE) => {
+    await postReq(STORE,'/api/auth/restart')
 }
 
-export const authRevoke = (STORE) => {
+export const authRevoke = async (STORE) => {
     const appId = 0
-    postReq(STORE,`/api/auth/revoke/${appId}`)
+    await postReq(STORE,`/api/auth/revoke/${appId}`)
 }
 
-export const authStart = (STORE) => {
-    postReq(STORE,'/api/auth/start')
+export const authStart = async (STORE) => {
+    await postReq(STORE,'/api/auth/start')
 }
 
-export const authStatus = (STORE) => {
-    postReq(STORE,'/api/auth/status')
+export const authStatus = async (STORE) => {
+    await postReq(STORE,'/api/auth/status')
 }
 
-export const authStop = (STORE) => {
-    postReq(STORE,'/api/auth/stop')
+export const authStop = async (STORE) => {
+    await postReq(STORE,'/api/auth/stop')
 }
 
-export const authSubscribe = (STORE) => {
+export const authSubscribe = async (STORE) => {
     const notifsEndpoint = ''
-    postReq(STORE,`/api/auth/subscribe/${notifsEndpoint}`)
+    await postReq(STORE,`/api/auth/subscribe/${notifsEndpoint}`)
 }
 
-export const authUnlock = (STORE) => {
-    postReq(STORE,'/api/auth/unlock')
+export const authUnlock = async (STORE) => {
+    await postReq(STORE,'/api/auth/unlock')
 }
 
-export const authUnsubscribe = (STORE) => {
+export const authUnsubscribe = async (STORE) => {
     const notifsEndpoint = ''
-    postReq(STORE,`/api/auth/unsubscribe/${notifsEndpoint}`)
+    await postReq(STORE,`/api/auth/unsubscribe/${notifsEndpoint}`)
 }
 
-export const authUpdate = (STORE) => {
-    postReq(STORE,'/api/auth/update')
+export const authUpdate = async (STORE) => {
+    await postReq(STORE,'/api/auth/update')
 }
 
 //Sequences
-export const createAndLogin = (STORE) => {
-    postReq(STORE,'/api/auth/restart')
-    postReq(STORE,'/api/auth/create')
-    postReq(STORE,'/api/auth/unlock')
-    postReq(STORE,'/api/auth/status')
+export const createAndLogin = async (STORE) => {
+    await postReq(STORE,'/api/auth/restart')
+    await postReq(STORE,'/api/auth/create')
+    await postReq(STORE,'/api/auth/unlock')
+    await postReq(STORE,'/api/auth/status')
 }
 
-export const reauth = (STORE) => {
-    postReq(STORE,'/api/auth/restart')
-    postReq(STORE,'/api/auth/unlock')
-    postReq(STORE,'/api/auth/status')
+export const reauth = async (STORE) => {
+    await postReq(STORE,'/api/auth/restart')
+    await postReq(STORE,'/api/auth/unlock')
+    await postReq(STORE,'/api/auth/status')
 }

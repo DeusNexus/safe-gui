@@ -91,6 +91,7 @@ div.textBg {
   background-color: whitesmoke;
   border-radius: 5px;
   height: 100%;
+  padding: 5px;
 }
 
 div.main {
@@ -140,6 +141,7 @@ textarea::placeholder {
 
 div.button-container {
   display: flex;
+  justify-content: space-between;
 }
 
 div.console-top {
@@ -170,4 +172,13 @@ button:hover {
 
 input {
   margin-right: 5px;
+}
+
+.cardlist {
+  width: 50px;
+}
+
+.card {
+  min-width: 90%;
+  max-width: 90%;
 }

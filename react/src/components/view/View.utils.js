@@ -1,17 +1,17 @@
 import { postReq } from '../../Functions'
 
-export const cat = (STORE, catXOR) => {
+export const cat = async (STORE, catXOR) => {
     const location = encodeURIComponent(catXOR)
-    postReq(STORE,`/api/cat/${location}`)
+    await postReq(STORE,`/api/cat/${location}`)
 }
 
-export const dog = (STORE, dogXOR) => {
+export const dog = async (STORE, dogXOR) => {
     const location = encodeURIComponent(dogXOR)
-    postReq(STORE,`/api/dog/${location}`)
+    await postReq(STORE,`/api/dog/${location}`)
 }
 
-export const download = (STORE, downloadXOR) => {
+export const download = async (STORE, downloadXOR) => {
     const location = encodeURIComponent(downloadXOR)
-    postReq(STORE,`/api/dog/${location}`)
-    postReq(STORE,`/api/cat/${location}`)
+    await postReq(STORE,`/api/dog/${location}`)
+    await postReq(STORE,`/api/cat/${location}`)
 }

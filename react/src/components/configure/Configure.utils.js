@@ -1,83 +1,83 @@
 import { postReq } from '../../Functions'
 
-export const config = (STORE) => {
-    postReq(STORE,`/api/config`)
+export const config = async (STORE) => {
+    await postReq(STORE,`/api/config`)
 }
 
-// export const configAdd = (STORE) => {
-//     postReq(STORE,`/api/config/add`)
+// export const configAdd = async (STORE) => {
+//     await postReq(STORE,`/api/config/add`)
 // }
 
-export const configAddNetwork = (STORE) => {
+export const configAddNetwork = async (STORE) => {
     const networkName = 'fleming-testnet'
     const configLocation = 'https://sn-node.s3.eu-west-2.amazonaws.com/config/node_connection_info.config'
-    postReq(STORE,`/api/config/add/network/${networkName}/${configLocation}`)
+    await postReq(STORE,`/api/config/add/network/${networkName}/${configLocation}`)
 }
 
-export const configClear = (STORE) => {
-    postReq(STORE,`/api/config/clear`)
+export const configClear = async (STORE) => {
+    await postReq(STORE,`/api/config/clear`)
 }
 
-export const configHelp = (STORE) => {
-    postReq(STORE,`/api/config/help`)
+export const configHelp = async (STORE) => {
+    await postReq(STORE,`/api/config/help`)
 }
 
-// export const configRemove = (STORE) => {
-//     postReq(STORE,`/api/config/remove`)
+// export const configRemove = async (STORE) => {
+//     await postReq(STORE,`/api/config/remove`)
 // }
 
-export const configRemoveNetwork = (STORE) => {
+export const configRemoveNetwork = async (STORE) => {
     const networkName = ''
-    postReq(STORE,`/api/config/remove/network/${networkName}`)
+    await postReq(STORE,`/api/config/remove/network/${networkName}`)
 }
 
-export const setupCompletions = (STORE) => {
+export const setupCompletions = async (STORE) => {
     const shell = ''
-    postReq(STORE,`/api/setup/completions/${shell}`)
+    await postReq(STORE,`/api/setup/completions/${shell}`)
 }
 
-export const setupHelp = (STORE) => {
-    postReq(STORE,`/api/setup/help`)
+export const setupHelp = async (STORE) => {
+    await postReq(STORE,`/api/setup/help`)
 }
 
-export const help = (STORE) => {
-    postReq(STORE,`/api/help`)
+export const help = async (STORE) => {
+    await postReq(STORE,`/api/help`)
 }
 
-export const update = (STORE) => {
-    postReq(STORE,`/api/update`)
+export const update = async (STORE) => {
+    await postReq(STORE,`/api/update`)
 }
 
-export const networks = (STORE) => {
-    postReq(STORE,`/api/networks`)
+export const networks = async (STORE) => {
+    await postReq(STORE,`/api/networks`)
 }
 
-export const networksAdd = (STORE) => {
+export const networksAdd = async (STORE) => {
     const networkName = ''
     const configLocation = ''
-    postReq(STORE,`/api/networks/add/${networkName}/${configLocation}`)
+    await postReq(STORE,`/api/networks/add/${networkName}/${configLocation}`)
 }
 
-export const networksCheck = (STORE) => {
-    postReq(STORE,`/api/networks/check`)
+export const networksCheck = async (STORE) => {
+    await postReq(STORE,`/api/networks/check`)
 }
 
-export const networksHelp = (STORE) => {
-    postReq(STORE,`/api/networks/help`)
+export const networksHelp = async (STORE) => {
+    await postReq(STORE,`/api/networks/help`)
 }
 
-export const networksRemove = (STORE) => {
+export const networksRemove = async (STORE) => {
     const networkName = ''
-    postReq(STORE,`/api/networks/remove/${networkName}`)
+    await postReq(STORE,`/api/networks/remove/${networkName}`)
 }
 
-export const networksSet = (STORE) => {
+export const networksSet = async (STORE) => {
     const networkName = ''
     const addresses = ''
-    postReq(STORE,`/api/networks/set/${networkName}/${addresses}`)
+    await postReq(STORE,`/api/networks/set/${networkName}/${addresses}`)
 }
 
-export const networksSwitch = (STORE) => {
+export const networksSwitch = async (STORE) => {
     const networkName = ''
-    postReq(STORE,`/api/networks/switch/${networkName}`)
+    await postReq(STORE,`/api/networks/switch/${networkName}`)
 }

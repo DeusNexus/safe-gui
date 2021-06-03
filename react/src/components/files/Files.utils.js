@@ -1,92 +1,92 @@
 import { postReq } from '../../Functions'
 
-export const filesAdd = (STORE) => {
+export const filesAdd = async (STORE) => {
     const location = ''
     const target = ''
-    postReq(STORE,`/api/files/add/${location}/${target}`)
+    await postReq(STORE,`/api/files/add/${location}/${target}`)
 }
 
-export const filesGet = (STORE) => {
+export const filesGet = async (STORE) => {
     const source = ''
     const dest = ''
-    postReq(STORE,`/api/files/get/${source}/${dest}`)
+    await postReq(STORE,`/api/files/get/${source}/${dest}`)
 }
 
-export const filesHelp = (STORE) => {
-    postReq(STORE,`/api/files/help`)
+export const filesHelp = async (STORE) => {
+    await postReq(STORE,`/api/files/help`)
 }
 
-export const filesLs = (STORE) => {
+export const filesLs = async (STORE) => {
     const target = ''
-    postReq(STORE,`/api/files/ls/${target}`)
+    await postReq(STORE,`/api/files/ls/${target}`)
 }
 
-export const filesPut = (STORE) => {
+export const filesPut = async (STORE) => {
     const location = ''
     const dest = ''
-    postReq(STORE,`/api/files/put/${location}/${dest}`)
+    await postReq(STORE,`/api/files/put/${location}/${dest}`)
 }
 
-export const filesRm = (STORE) => {
+export const filesRm = async (STORE) => {
     const target = ''
-    postReq(STORE,`/api/files/add/${target}`)
+    await postReq(STORE,`/api/files/add/${target}`)
 }
 
-export const filesSync = (STORE) => {
+export const filesSync = async (STORE) => {
     const location = ''
     const target = ''
-    postReq(STORE,`/api/files/sync/${location}/${target}`)
+    await postReq(STORE,`/api/files/sync/${location}/${target}`)
 }
 
-export const filesTree = (STORE) => {
+export const filesTree = async (STORE) => {
     const target = ''
-    postReq(STORE,`/api/files/tree/${target}`)
+    await postReq(STORE,`/api/files/tree/${target}`)
 }
 
-export const xorurl = (STORE) => {
+export const xorurl = async (STORE) => {
     const location = ''
-    postReq(STORE,`/api/xorurl/${location}`)
+    await postReq(STORE,`/api/xorurl/${location}`)
 }
 
-export const xorurlDecode = (STORE) => {
+export const xorurlDecode = async (STORE) => {
     const xorurl = ''
-    postReq(STORE,`/api/xorurl/decode/${xorurl}`)
+    await postReq(STORE,`/api/xorurl/decode/${xorurl}`)
 }
 
-export const xorurlHelp = (STORE) => {
-    postReq(STORE,`/api/xorurl/help`)
+export const xorurlHelp = async (STORE) => {
+    await postReq(STORE,`/api/xorurl/help`)
 }
 
-export const seqAppend = (STORE) => {
+export const seqAppend = async (STORE) => {
     const data = ''
     const target = ''
-    postReq(STORE,`/api/seq/append/${data}/${target}`)
+    await postReq(STORE,`/api/seq/append/${data}/${target}`)
 }
 
-export const seqHelp = (STORE) => {
-    postReq(STORE,`/api/seq/help`)
+export const seqHelp = async (STORE) => {
+    await postReq(STORE,`/api/seq/help`)
 }
 
-export const seqStore = (STORE) => {
+export const seqStore = async (STORE) => {
     const data = ''
-    postReq(STORE,`/api/seq/store/${data}`)
+    await postReq(STORE,`/api/seq/store/${data}`)
 }
 
-export const nrsAdd = (STORE) => {
+export const nrsAdd = async (STORE) => {
     const name = ''
-    postReq(STORE,`/api/nrs/add/${name}`)
+    await postReq(STORE,`/api/nrs/add/${name}`)
 }
 
-export const nrsCreate = (STORE) => {
+export const nrsCreate = async (STORE) => {
     const name = ''
-    postReq(STORE,`/api/nrs/create/${name}`)
+    await postReq(STORE,`/api/nrs/create/${name}`)
 }
 
-export const nrsHelp = (STORE) => {
-    postReq(STORE,`/api/nrs/help`)
+export const nrsHelp = async (STORE) => {
+    await postReq(STORE,`/api/nrs/help`)
 }
 
-export const nrsRemove = (STORE) => {
+export const nrsRemove = async (STORE) => {
     const name = ''
-    postReq(STORE,`/api/nrs/remove/${name}`)
+    await postReq(STORE,`/api/nrs/remove/${name}`)
 }

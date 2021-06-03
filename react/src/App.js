@@ -60,7 +60,7 @@ export default function App() {
         <div className='main-left'>
             { /* Route components are rendered if the path prop matches the current URL */}
             <Route exact path="/">
-              <Main/>
+              <Main STORE={STORE}/>
             </Route>
             <Route path="/configure">
               <Configure STORE={STORE}/>

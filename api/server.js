@@ -31,6 +31,21 @@ async function handleCMD(cmd,req) {
 app.use(express.json())
 
 /**
+ * OS CALLS
+ */
+app.post('/api/os/clean-safe', async (req, res) => {
+    const safeDir = '$HOME/.safe'
+    body = await handleCMD(`rm -rf ${safeDir}`,req)
+    return res.json(body)
+})
+
+app.post('/api/os/curl-safe', async (req, res) => {
+    const shell = 'bash'
+    body = await handleCMD(`curl -so- https://sn-api.s3.amazonaws.com/install.sh | ${shell}`,req)
+    return res.json(body)
+})
+
+/**
  * AUTH
  * **/
 app.post('/api/auth', async (req, res) => {
@@ -471,6 +486,14 @@ app.post('/api/node/install', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
     body = await handleCMD(`safe node install ${flags} ${options}`,req)
+    return res.json(body)
+})
+
+app.post('/api/node/join', async (req, res) => {
+    console.log(req.params)
+    const flags = req.body.flags
+    const options = req.body.options
+    body = await handleCMD(`safe node join ${flags} ${options}`,req)
     return res.json(body)
 })
 

@@ -15,7 +15,7 @@ const Auth = ({ STORE }) => {
                 <h3>Interact with the authenticator daemon</h3>
                 <br/>
                 <div className='button-container'>
-                    <CardList title={<h3 style={{color: 'red'}}>Generic Commands</h3>}>
+                    <CardList className="cardlist" title={<h3 style={{color: 'red'}}>Generic Commands</h3>}>
                         <Card
                             title={'AUTH ALLOW'}
                             subtitle={'Send request to a remote Authenticator daemon to allow an authorisation request'}
@@ -136,7 +136,7 @@ const Auth = ({ STORE }) => {
                             <button onClick={() => authUpdate(STORE)}>UPDATE</button>
                         </Card>
                     </CardList>
-                    <CardList title={<h3 style={{color: 'red'}}>Command Sequences</h3>}>
+                    <CardList className="cardlist" title={<h3 style={{color: 'red'}}>Command Sequences</h3>}>
                         <Card
                             title={'Create Default and Login'}
                             subtitle={''}
