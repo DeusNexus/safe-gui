@@ -38,20 +38,20 @@ export const walletCreate = async (STORE, walletCreateName, walletCreateTestCoin
     await postReq(STORE,`/api/wallet/create`,flags,options)
 }
 
+export const walletDeposit = async (STORE, walletDepositTarget, walletDepositSK, walletDepositName) => {
+    const target = walletDepositTarget
+    const flags = ''
+    const options = `--sk ${walletDepositSK}${walletDepositName?` --name ${walletDepositName}`:''}`
+    await postReq(STORE,`/api/wallet/deposit/${target}`, flags, options)
+}
+
 export const walletHelp = async (STORE) => {
     await postReq(STORE,`/api/wallet/help`)
 }
 
-export const walletInsert = async (STORE, walletInsertTarget, walletInsertSK, walletInsertName) => {
-    const target = walletInsertTarget
+export const walletReissue = async (STORE, walletReissueAmount, walletReissueFrom, walletReissueTo) => {
+    const amount = walletReissueAmount
     const flags = ''
-    const options = `--sk ${walletInsertSK}${walletInsertName?` --name ${walletInsertName}`:''}`
-    await postReq(STORE,`/api/wallet/insert/${target}`, flags, options)
-}
-
-export const walletTransfer = async (STORE, walletTransferAmount, walletTransferFrom, walletTransferTo) => {
-    const amount = walletTransferAmount
-    const flags = ''
-    const options = `--from ${walletTransferFrom} --to ${walletTransferTo}`
-    await postReq(STORE,`/api/wallet/transfer/${amount}`, flags, options)
+    const options = `--from ${walletReissueFrom} --to ${walletReissueTo}`
+    await postReq(STORE,`/api/wallet/reissue/${amount}`, flags, options)
 }

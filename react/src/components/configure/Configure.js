@@ -2,7 +2,7 @@ import React from 'react';
 import { 
     config, configAddNetwork, configClear, configHelp, configRemoveNetwork,
     setupCompletions, setupHelp, help, update, 
-    networks, networksAdd, networksCheck, networksHelp, networksRemove, networksSet, networksSwitch
+    networks, networksAdd, networksCheck, networksHelp, networksRemove, networksSection, networksSwitch
 } from './Configure.utils'
 import Card from '../card/Card';
 import CardList from './../cardlist/CardList';
@@ -111,12 +111,11 @@ const Configure = ({ STORE }) => {
                         <button onClick={() => networksRemove(STORE)}>REMOVE</button>
                     </Card>
                     <Card
-                        title={'NETWORKS SET'}
-                        subtitle={'Set the list of IP addrsses (and port numbers) for a network in the CLI config'}
+                        title={'NETWORKS SECTION'}
+                        subtitle={'Display information about the sections of a network'}
                     >
-                        <input type='text' name='networks-set-networkname' placeholder='Network Name'></input>
-                        <input type='text' name='networks-set-addresses' placeholder='Addresses...'></input>
-                        <button onClick={() => networksSet(STORE)}>SET</button>
+                        <input type='text' name='networks-section-networkname' placeholder='Network Name'></input>
+                        <button onClick={() => networksSection(STORE)}>SECTIONS</button>
                     </Card>
                     <Card
                         title={'NETWORKS SWITCH'}

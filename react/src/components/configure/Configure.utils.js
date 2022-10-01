@@ -71,10 +71,9 @@ export const networksRemove = async (STORE) => {
     await postReq(STORE,`/api/networks/remove/${networkName}`)
 }
 
-export const networksSet = async (STORE) => {
+export const networksSection = async (STORE) => {
     const networkName = ''
-    const addresses = ''
-    await postReq(STORE,`/api/networks/set/${networkName}/${addresses}`)
+    await postReq(STORE,`/api/networks/sections/${networkName}`)
 }
 
 export const networksSwitch = async (STORE) => {

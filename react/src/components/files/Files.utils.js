@@ -57,21 +57,6 @@ export const xorurlHelp = async (STORE) => {
     await postReq(STORE,`/api/xorurl/help`)
 }
 
-export const seqAppend = async (STORE) => {
-    const data = ''
-    const target = ''
-    await postReq(STORE,`/api/seq/append/${data}/${target}`)
-}
-
-export const seqHelp = async (STORE) => {
-    await postReq(STORE,`/api/seq/help`)
-}
-
-export const seqStore = async (STORE) => {
-    const data = ''
-    await postReq(STORE,`/api/seq/store/${data}`)
-}
-
 export const nrsAdd = async (STORE) => {
     const name = ''
     await postReq(STORE,`/api/nrs/add/${name}`)

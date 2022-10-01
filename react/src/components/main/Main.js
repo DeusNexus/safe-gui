@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './../card/Card';
 import CardList from './../cardlist/CardList';
-import { mainClean, mainInstallFull, mainAddSwitchCheck, mainCreateAndLogin, mainJoin } from './Main.utils';
+import { mainClean, mainInstallFull, mainAddSwitchCheck, mainJoin } from './Main.utils';
 
 function Main({STORE}) {
     return (
@@ -27,9 +27,7 @@ function Main({STORE}) {
                     >
                         <div className='textBg'>
                             <code>curl -so- https://sn-api.s3.amazonaws.com/install.sh | bash</code><br/>
-                            <code>safe auth install</code><br/>
                             <code>safe node install</code><br/>
-                            <code>safe auth bin-version</code><br/>
                             <code>safe node bin-version</code>
                             <br/>
                             <button onClick={() => mainInstallFull(STORE)}>Execute Sequence</button>
@@ -46,20 +44,6 @@ function Main({STORE}) {
                             <code>safe networks check</code>
                             <br/>
                             <button onClick={() => mainAddSwitchCheck(STORE)}>Execute Sequence</button>
-                        </div>
-                    </Card>
-                    <Card 
-                        title={'Create Default and Login:'}
-                        subtitle={''}
-                        showDefault={true}
-                    >
-                        <div className='textBg'>
-                            <code>safe authd restart</code><br/>
-                            <code>safe authd create --test-coins --config default_credentials.json</code><br/>
-                            <code>safe authd unlock --self-auth --config default_credentials.json</code><br/>
-                            <code>safe authd status</code>
-                            <br/>
-                            <button onClick={() => mainCreateAndLogin(STORE)}>Execute Sequence</button>
                         </div>
                     </Card>
                     <Card 

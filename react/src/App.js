@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, Route } from "react-router-dom";
 import { FaAlignRight } from 'react-icons/fa';
 import './App.css';
-import { Auth, Configure, Files, KeyWallet, Main, Node, View } from './components'
+import { Configure, Files, KeyWallet, Main, Node, View } from './components'
 
 export default function App() {
 
@@ -36,9 +36,6 @@ export default function App() {
             <Link to='/configure'>Configure</Link> 
           </li>
           <li>
-            <Link to='/auth'>Auth</Link> 
-          </li>
-          <li>
             <Link to='/node'>Node</Link> 
           </li>
           <li>
@@ -64,9 +61,6 @@ export default function App() {
             </Route>
             <Route path="/configure">
               <Configure STORE={STORE}/>
-            </Route>
-            <Route path="/auth">
-              <Auth STORE={STORE}/>
             </Route>
             <Route path="/node">
               <Node STORE={STORE}/>

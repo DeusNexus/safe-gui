@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     filesAdd, filesGet, filesHelp, filesLs, filesPut, filesRm, filesSync, filesTree,
-    xorurl, xorurlDecode, xorurlHelp, seqAppend, seqHelp, seqStore, nrsAdd, nrsCreate, nrsHelp, nrsRemove
+    xorurl, xorurlDecode, xorurlHelp, nrsAdd, nrsCreate, nrsHelp, nrsRemove
 } from './Files.utils';
 import Card from './../card/Card';
 import CardList from './../cardlist/CardList';
@@ -93,27 +93,6 @@ const Files = ({STORE}) => {
                 subtitle={''}
                 >
                     <button onClick={() => xorurlHelp(STORE)}>HELP</button>
-                </Card>
-                <Card
-                title={'SEQ APPEND'}
-                subtitle={'Append an element to an existing Sequence on the network'}
-                >
-                    <input type='file' name='seq-append-data' placeholder='Data'></input>
-                    <input type='text' name='seq-append-target' placeholder='Target'></input>
-                    <button onClick={() => seqAppend(STORE)}>APPEND</button>
-                </Card>
-                <Card
-                title={'SEQ HELP'}
-                subtitle={'Manage Sequences on the Safe Network'}
-                >
-                    <button onClick={() => seqHelp(STORE)}>HELP</button>
-                </Card>
-                <Card
-                title={'SEQ STORE'}
-                subtitle={'Stores a new Sequence on the Safe Network'}
-                >
-                    <input type='file' name='seq-store-data' placeholder='Data'></input>
-                    <button onClick={() => seqStore(STORE)}>STORE</button>
                 </Card>
                 <Card
                 title={'NRS ADD'}

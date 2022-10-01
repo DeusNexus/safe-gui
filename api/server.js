@@ -206,13 +206,6 @@ app.post('/api/files/tree/:target', async (req, res) => {
 /**
  * KEYS
  * **/
-app.post('/api/keys/balance', async (req, res) => {
-    const flags = req.body.flags
-    const options = req.body.options
-    body = await handleCMD(`safe keys balance ${flags} ${options}`,req)
-    return res.json(body)
-})
-
 app.post('/api/keys/create', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
@@ -242,14 +235,6 @@ app.post('/api/keys/show/:keyUrl', async (req, res) => {
     return res.json(body)
 })
 
-app.post('/api/keys/transfer/:amount', async (req, res) => {
-    const flags = req.body.flags
-    const options = req.body.options
-    const amount = req.params.amount
-    body = await handleCMD(`safe keys transfer ${amount} ${flags} ${options}`,req)
-    return res.json(body)
-})
-
 /**
  * NETWORKS
  * **/
@@ -257,15 +242,6 @@ app.post('/api/keys/transfer/:amount', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
     body = await handleCMD(`safe networks ${flags} ${options}`,req)
-    return res.json(body)
-})
-
-app.post('/api/networks/add/:networkName/:configLocation', async (req, res) => {
-    const flags = req.body.flags
-    const options = req.body.options
-    const networkName = req.params.networkName
-    const configLocation =  req.params.configLocation
-    body = await handleCMD(`safe networks add ${networkName} ${configLocation} ${flags} ${options}`,req)
     return res.json(body)
 })
 
@@ -300,12 +276,11 @@ app.post('/api/networks/remove/:networkName', async (req, res) => {
     return res.json(body)
 })
 
-app.post('/api/networks/set/:networkName/:addresses', async (req, res) => {
+app.post('/api/networks/sections/:networkName', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
     const networkName = req.params.networkName
-    const addresses = req.params.addresses
-    body = await handleCMD(`safe networks remove ${networkName} ${addresses} ${flags} ${options}`,req)
+    body = await handleCMD(`safe networks sections ${networkName} ${flags} ${options}`,req)
     return res.json(body)
 })
 
@@ -391,18 +366,18 @@ app.post('/api/nrs/add/:name', async (req, res) => {
     return res.json(body)
 })
 
-app.post('/api/nrs/create/:name', async (req, res) => {
-    const flags = req.body.flags
-    const options = req.body.options
-    const name = req.params.name
-    body = await handleCMD(`safe nrs create ${name} ${flags} ${options}`,req)
-    return res.json(body)
-})
-
 app.post('/api/nrs/help', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
     body = await handleCMD(`safe nrs help ${flags} ${options}`,req)
+    return res.json(body)
+})
+
+app.post('/api/nrs/register/:name', async (req, res) => {
+    const flags = req.body.flags
+    const options = req.body.options
+    const name = req.params.name
+    body = await handleCMD(`safe nrs register ${name} ${flags} ${options}`,req)
     return res.json(body)
 })
 
@@ -413,34 +388,6 @@ app.post('/api/nrs/remove/:name', async (req, res) => {
     body = await handleCMD(`safe nrs remove ${name} ${flags} ${options}`,req)
     return res.json(body)
 })
-
-/**
- * SEQ
- * **/
-app.post('/api/seq/append/:data/:target', async (req, res) => {
-    const flags = req.body.flags
-    const options = req.body.options
-    const data = req.params.data
-    const target = req.params.target
-    body = await handleCMD(`safe seq append ${data} ${target} ${flags} ${options}`,req)
-    return res.json(body)
-})
-
-app.post('/api/seq/help', async (req, res) => {
-    const flags = req.body.flags
-    const options = req.body.options
-    body = await handleCMD(`safe seq help ${flags} ${options}`,req)
-    return res.json(body)
-})
-
-app.post('/api/seq/store/:data', async (req, res) => {
-    const flags = req.body.flags
-    const options = req.body.options
-    const data = req.params.data
-    body = await handleCMD(`safe seq store ${data} ${flags} ${options}`,req)
-    return res.json(body)
-})
-
 
 /**
  * SETUP
@@ -488,6 +435,14 @@ app.post('/api/wallet/create', async (req, res) => {
     return res.json(body)
 })
 
+app.post('/api/wallet/deposit/:wallet_url', async (req, res) => {
+    const flags = req.body.flags
+    const options = req.body.options
+    const target = req.params.wallet_url
+    body = await handleCMD(`safe wallet deposit ${target}${flags}${options}`,req)
+    return res.json(body)
+})
+
 app.post('/api/wallet/help', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
@@ -495,19 +450,12 @@ app.post('/api/wallet/help', async (req, res) => {
     return res.json(body)
 })
 
-app.post('/api/wallet/insert/:target', async (req, res) => {
-    const flags = req.body.flags
-    const options = req.body.options
-    const target = req.params.target
-    body = await handleCMD(`safe wallet insert ${target}${flags}${options}`,req)
-    return res.json(body)
-})
 
-app.post('/api/wallet/transfer/:amount', async (req, res) => {
+app.post('/api/wallet/reissue/:amount', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
     const amount = req.params.amount
-    body = await handleCMD(`safe wallet transfer ${amount} ${flags} ${options}`,req)
+    body = await handleCMD(`safe wallet reissue ${amount} ${flags} ${options}`,req)
     return res.json(body)
 })
 
@@ -535,6 +483,14 @@ app.post('/api/xorurl/help', async (req, res) => {
     const flags = req.body.flags
     const options = req.body.options
     body = await handleCMD(`safe xorurl help ${flags} ${options}`,req)
+    return res.json(body)
+})
+
+app.post('/api/xorurl/pk/:pk', async (req, res) => {
+    const flags = req.body.flags
+    const options = req.body.options
+    const pk = req.params.pk
+    body = await handleCMD(`safe xorurl pk ${pk} ${flags} ${options}`,req)
     return res.json(body)
 })
 
